@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.colorTest {
+  color: #ffffff72;
+}
+
+/* parallax image */
+.parallax-image {
+  aspect-ratio: 2/1;
+}
+@media (max-width: 900px) {
+  .parallax-image {
+    aspect-ratio: 1/2;
+  }
+}
