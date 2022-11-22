@@ -66,7 +66,7 @@ const FixedGear = () => {
     <Container maxWidth={false}>
       <Toolbar sx={{height: 75}} />
       <Box sx={{backgroundColor: 'background.default'}}>
-        <Swiper modules={[Pagination]}>
+        <Swiper modules={[Pagination]} loop={true}>
           {fixedGearBikes.map((bike) => (
             <SwiperSlide style={slideStyles} key={bike}>
                <Box component="img" alt="bike" sx={{height: 'auto', width: '100vw', textAlign: 'center'}} src={process.env.PUBLIC_URL + '/images/' + bike.name} />
