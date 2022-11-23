@@ -50,3 +50,16 @@
     aspect-ratio: 1/2;
   }
 }
+
+/* slide from left */
+.slide-from-left {
+  /* display: none; */
+  position: relative;
+  left: -20%;
+}
+
+.slide-from-left-active {
+  display: block;
+  left: 0;
+  transition: 1500
+}
