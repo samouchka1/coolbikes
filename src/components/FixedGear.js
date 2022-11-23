@@ -23,7 +23,7 @@ const fixedGearBikes = [
   },
   {
     name: 'fixedgearnice.jpg',
-    info: 'Beutiful color on frame, this bike is a dream to ride.',
+    info: 'Beautiful color on frame, this bike is a dream to ride.',
   },
   {
     name: 'fixedspecial.jpg',

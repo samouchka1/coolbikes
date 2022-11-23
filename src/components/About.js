@@ -45,7 +45,7 @@ const About = () => {
     <Container maxWidth={false}>
       {/* <Toolbar sx={{height: 75}} /> */}
       <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <Box sx={{width: '22vw'}}>
+        <Box sx={{width: '22vw', margin: '1rem'}}>
           <Box sx={{display: 'flex', flexDirection: 'column', 
           alignItems: 'center', backgroundColor: 'background.default', 
           margin: '0',
@@ -54,7 +54,12 @@ const About = () => {
               <Button onClick={()=>setSection(setB)}>Gravel</Button>
               <Button onClick={()=>setSection(setC)}>Road</Button>
           </Box>
-          <Box sx={{position:'relative', left: '110%'}}>
+          <Box 
+            sx={{
+              position:'relative', 
+              // left: '110%'
+            }}
+          >
             {/* <CSSTransition
               in={section}
               nodeRef={nodeRef}
@@ -62,11 +67,12 @@ const About = () => {
               // className="slide-from-left"
             > */}
               <Paper sx={{
-                textAlign: 'right', 
+                textAlign: 'left', 
                 color: 'common.black', 
                 fontWeight: '800', 
                 backgroundColor: '#ffffffa0', //bgcolor
-                padding: '1rem'
+                padding: '1rem',
+                margin: '1rem 0'
               }}>
                 <Typography variant="h4">{title}</Typography>
                 <Typography>{text}</Typography>
