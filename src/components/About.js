@@ -24,7 +24,7 @@ const About = () => {
   }
   const setB = { 
     title: "Gravel", 
-    text: "Gravel bikes are built for speed and verstility.", 
+    text: "Gravel bikes are built for speed, maneuverability and verstility.", 
     image: "gravel.jpg", 
     // imageMobile: "testImage2Mobile.jpg" 
   }
@@ -45,17 +45,16 @@ const About = () => {
     <Container maxWidth={false}>
       {/* <Toolbar sx={{height: 75}} /> */}
       <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <Box>
+        <Box sx={{width: '22vw'}}>
           <Box sx={{display: 'flex', flexDirection: 'column', 
           alignItems: 'center', backgroundColor: 'background.default', 
           margin: '0',
-          border: 'solid gray 1px'//test
           }}>
               <Button onClick={()=>setSection(setA)}>Fixed Gear</Button>
               <Button onClick={()=>setSection(setB)}>Gravel</Button>
               <Button onClick={()=>setSection(setC)}>Road</Button>
           </Box>
-          <Box sx={{position:'relative', left: '110%', top: '30%'}}>
+          <Box sx={{position:'relative', left: '110%'}}>
             {/* <CSSTransition
               in={section}
               nodeRef={nodeRef}

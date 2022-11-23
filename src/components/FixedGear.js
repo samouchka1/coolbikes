@@ -8,7 +8,6 @@ import {
 } from '@mui/material';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
-import {faker} from '@faker-js/faker';
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -16,19 +15,19 @@ import "swiper/css/pagination";
 const fixedGearBikes = [
   {
     name: 'fixedaffinity.jpg',
-    info: faker.lorem.sentence(5),
+    info: 'The Affinity road bike is a beast of a cycling machine.',
   },
   {
     name: 'fixednozz.jpg',
-    info: faker.lorem.sentence(5),
+    info: 'This bike is comfortable to ride, yet fast.',
   },
   {
     name: 'fixedgearnice.jpg',
-    info: faker.lorem.sentence(5),
+    info: 'Beutiful color on frame, this bike is a dream to ride.',
   },
   {
     name: 'fixedspecial.jpg',
-    info: faker.lorem.sentence(5),
+    info: 'Designed to keep you moving fast, efficiently.',
   }
 ]
 
@@ -48,11 +47,11 @@ const slideTextStyles = {
   padding: '.5rem', 
   position: 'absolute', 
   bottom: {
-    md: '75%',
-    sm: '75%',
+    md: '80%',
+    sm: '76%',
     xs: '70%'
   },
-  left: '10%'
+  left: '6%'
 }
 
 const FixedGear = () => {

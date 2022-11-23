@@ -62,28 +62,20 @@ const customerService = [
     
 ]
 
-// const popularPages =[
-//     {
-//         name: 'Men',
-//         href: '#abc'
-//     },
-//     {
-//         name: 'Women',
-//         href: '#abc'
-//     },
-//     {
-//         name: 'Athletic',
-//         href: '#abc'
-//     },
-//     {
-//         name: 'Outdoor',
-//         href: '#abc'
-//     },
-//     {
-//         name: 'Casual',
-//         href: '#abc'
-//     }
-// ]
+const ourPages =[
+    {
+        name: 'Fixed\u00A0Gear',
+        href: '#abc'
+    },
+    {
+        name: 'Gravel',
+        href: '#abc'
+    },
+    {
+        name: 'Road',
+        href: '#abc'
+    },
+]
 
 //STYLES
 
@@ -176,17 +168,17 @@ const Footer = () => {
                     <Tooltip title="CoolBikes">
                         <Link href="#abc" sx={{textDecoration: 'none'}}>
                             <Box 
-                                className="App-logo"
+                                // className="App-logo"
                                 component="img" 
                                 alt="CoolBikes logo" 
                                 height="8rem" 
-                                src={process.env.PUBLIC_URL + '/images/bikes-logo.png'}
+                                src={process.env.PUBLIC_URL + '/images/icon-home.png'}
                             />
                         </Link>
                     </Tooltip>
                 </Box>
                 <Box sx={footerSectionStyles}>
-                    <Typography variant="body2">
+                    <Typography variant="body2" sx={{fontWeight: '600'}}>
                         Customer Service
                     </Typography>
                     <Typography variant="subtitle2">
@@ -205,13 +197,13 @@ const Footer = () => {
                         </List>
                     </Typography>
                 </Box>
-                {/* <Box sx={footerSectionStyles}>
-                    <Typography variant="body2">
-                        Popular&nbsp;Pages
+                <Box sx={footerSectionStyles}>
+                    <Typography variant="body2" sx={{fontWeight: '600'}}>
+                        Our&nbsp;Pages
                     </Typography>
                     <Typography variant="subtitle2">
                         <List>
-                            {popularPages.map((link) => (
+                            {ourPages.map((link) => (
                                 <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
                                     <Link 
                                         href={link.href} 
@@ -224,7 +216,7 @@ const Footer = () => {
                             ))}
                         </List>
                     </Typography>
-                </Box> */}
+                </Box>
 
                 <Box sx={backToTopButtonStyle}>
                     <HashLink
