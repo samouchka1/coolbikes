@@ -4,6 +4,7 @@ import {
   Box,
   Typography,
   Container,
+  Paper,
 } from '@mui/material';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -37,9 +38,7 @@ const slideStyles = {
 }
 
 const slideTextStyles = {
-  backgroundColor: '#ffffff75',
-  boxShadow: 'inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);', 
-  borderRadius: '10px', 
+  backgroundColor: '#ffffffa0',
   width: {
     md: '200px',
     xs: '100px'
@@ -69,10 +68,19 @@ const FixedGear = () => {
         <Swiper modules={[Pagination]} loop={true}>
           {fixedGearBikes.map((bike) => (
             <SwiperSlide style={slideStyles} key={bike}>
-               <Box component="img" alt="bike" sx={{height: 'auto', width: '100vw', textAlign: 'center'}} src={process.env.PUBLIC_URL + '/images/' + bike.name} />
-                <Typography sx={slideTextStyles}>
-                  {bike.info}
-                </Typography>
+              <Box 
+                component="img" 
+                alt="bike" 
+                sx={{height: 'auto', 
+                width: '100vw', 
+                textAlign: 'center'}} 
+                src={process.env.PUBLIC_URL + '/images/' + bike.name} 
+              />
+                <Paper sx={slideTextStyles}>
+                  <Typography variant="h5">
+                    {bike.info}
+                  </Typography>
+                </Paper>
             </SwiperSlide>
           ))}
         </Swiper>
