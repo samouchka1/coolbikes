@@ -89,8 +89,10 @@ const customerService = [
 
 const componentStyles = {
     backgroundColor: 'primary.main', //bgolor
-    border: 'solid 1px #b2b2b2', //border color
-    margin: '0 auto'
+    // border: 'solid 1px #b2b2b2', //border color
+    margin: '0 auto',
+    boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)',
+    // borderRadius: '4px'
 }
 
 const footerStyles = {
@@ -144,7 +146,7 @@ const backToTopButtonStyle = {
 const Footer = () => {
 
   return (
-    <Container maxWidth={false} sx={{margin: '1rem 0 4rem'}}>
+    <Container maxWidth={false} sx={{margin: '.75rem 0 4rem'}}>
         <Box sx={componentStyles}>
             <AppBar sx={footerStyles}>
                 <Toolbar>

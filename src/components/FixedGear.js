@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Toolbar,
+  // Toolbar,
   Box,
   Typography,
   Container,
@@ -40,21 +40,17 @@ const slideStyles = {
 const slideTextStyles = {
   backgroundColor: '#ffffffa0',
   width: {
-    md: '200px',
-    xs: '100px'
-  }, 
-  fontSize: {
-    md: '1.7rem',
-    sm: '1.2rem',
-    xs: '.9rem'
+    md: '270px',
+    sm: '230px',
+    xs: '130px'
   }, 
   color: 'common.black', 
-  padding: '1rem', 
-  position: 'relative', 
+  padding: '.5rem', 
+  position: 'absolute', 
   bottom: {
     md: '75%',
-    sm: '70%',
-    xs: '60%'
+    sm: '75%',
+    xs: '70%'
   },
   left: '10%'
 }
@@ -63,9 +59,9 @@ const FixedGear = () => {
 
   return (
     <Container maxWidth={false}>
-      <Toolbar sx={{height: 75}} />
+      {/* <Toolbar sx={{height: 75}} /> */}
       <Box sx={{backgroundColor: 'background.default'}}>
-        <Swiper modules={[Pagination]} loop={true}>
+        <Swiper modules={[Pagination]} loop={true} style={{marginBottom: '-4px'}}>
           {fixedGearBikes.map((bike) => (
             <SwiperSlide style={slideStyles} key={bike}>
               <Box 
@@ -77,7 +73,15 @@ const FixedGear = () => {
                 src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
                 <Paper sx={slideTextStyles}>
-                  <Typography variant="h5">
+                  <Typography variant="h4"
+                    sx={{
+                      fontSize: {
+                        md: '1.6rem',
+                        sm: '1.2rem',
+                        xs: '.9rem'
+                      }, 
+                    }}
+                  >
                     {bike.info}
                   </Typography>
                 </Paper>

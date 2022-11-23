@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom';
 // import { Bounce } from 'react-awesome-reveal';
 
 const navBar = {
+  position: 'relative',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: {
@@ -24,6 +25,7 @@ const navBar = {
   height: 75, //height
   backgroundColor : 'primary',
   width: '100%',
+  marginBottom: '.75rem'
 }
 
 const navLinks = {

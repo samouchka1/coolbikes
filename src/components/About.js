@@ -4,7 +4,7 @@ import React, {
   // useRef,
 } from 'react'
 import {
-  Toolbar,
+  // Toolbar,
   Box,
   Container,
   Button,
@@ -43,7 +43,7 @@ const About = () => {
 
   return (
     <Container maxWidth={false}>
-      <Toolbar sx={{height: 75}} />
+      {/* <Toolbar sx={{height: 75}} /> */}
       <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <Box>
           <Box sx={{display: 'flex', flexDirection: 'column', 

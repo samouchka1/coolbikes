@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Toolbar,
+    // Toolbar,
     Box,
     Container,
     Typography,
@@ -38,7 +38,7 @@ const parallaxTextStyle = {
 const Welcome = () => {
   return (
     <Container maxWidth={false}>
-      <Toolbar sx={{height: 75}} />
+      {/* <Toolbar sx={{height: 75}} /> */}
       <ParallaxBanner className="parallax-image">
         <ParallaxBannerLayer speed={-30}>
             <Box
