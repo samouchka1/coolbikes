@@ -55,7 +55,7 @@ const Welcome = () => {
                     >
                         We are the best in
                     </Typography>
-                    <Typography sx={{fontSize: { md: '4.2rem', sm:'3rem',  xs: '2rem'}}}>
+                    <Typography sx={{fontSize: { md: '4.2rem', sm:'3rem',  xs: '2rem'}, lineHeight: '1.2'}}>
                         Performance Cycling
                     </Typography>
                 </Link>
