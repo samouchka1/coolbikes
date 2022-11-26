@@ -129,7 +129,7 @@ const FixedGear = () => {
                   },
                   left: {
                     md: 152,
-                    xs: 42
+                    xs: 46
                   },
                   overflowY: { md:'hidden', xs: 'scroll'}
                 }}
