@@ -71,61 +71,62 @@ const FixedGear = () => {
                 }} 
                 src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
-                <Box 
-                  sx={{ 
-                    backgroundColor: '#ffffff41',
-                    borderRadius: '50px',
-                    padding: '1.5rem',
-                    zIndex: 1,
-                    position: 'absolute', 
-                    top: {
-                      md: 108,
-                      sm: 65,
-                      xs: 6
-                    },
-                    left: {
-                      md: 116,
-                      xs: 5
-                    }
-                  }}
-                />
-                <Box 
-                  className="ping"
-                  sx={{ 
-                    backgroundColor: 'background.default',
-                    borderRadius: '50px',
-                    padding: '1.2rem',
-                    zIndex: 1,
-                    position: 'absolute', 
-                    top: {
-                      md: 112,
-                      sm: 65,
-                      xs: 10
-                    },
-                    left: {
-                      md: 121,
-                      xs: 9
-                    }
-                  }}
-                />
-                <IconButton 
-                  onClick={toggleClick}
-                  sx={{
-                    zIndex: 2,
-                    position: 'absolute', 
-                    top: {
-                      md: 105,
-                      sm: 58,
-                      xs: 4
-                    },
-                    left: {
-                      md: 115,
-                      xs: 2
-                    }
-                  }}
-                >
-                  { hide ? <CloseIcon fontSize="large" /> : <AddCircleIcon fontSize="large" />}
-                </IconButton>
+              <Box 
+                sx={{ 
+                  backgroundColor: '#ffffff41',
+                  borderRadius: '50px',
+                  padding: '1.5rem',
+                  zIndex: 1,
+                  position: 'absolute', 
+                  top: {
+                    md: 108,
+                    sm: 61,
+                    xs: 6
+                  },
+                  left: {
+                    md: 116,
+                    xs: 5
+                  }
+                }}
+              />
+              <Box 
+                className="ping"
+                sx={{ 
+                  backgroundColor: 'background.default',
+                  borderRadius: '50px',
+                  padding: '1.2rem',
+                  zIndex: 1,
+                  position: 'absolute', 
+                  top: {
+                    md: 112,
+                    sm: 65,
+                    xs: 10
+                  },
+                  left: {
+                    md: 121,
+                    xs: 9
+                  }
+                }}
+              />
+              <IconButton 
+                aria-label="view info"
+                onClick={toggleClick}
+                sx={{
+                  zIndex: 2,
+                  position: 'absolute', 
+                  top: {
+                    md: 105,
+                    sm: 58,
+                    xs: 4
+                  },
+                  left: {
+                    md: 115,
+                    xs: 2
+                  }
+                }}
+              >
+                { hide ? <CloseIcon fontSize="large" /> : <AddCircleIcon fontSize="large" />}
+              </IconButton>
 
               <Card 
                 className={ hide ? 'puff-in-top' : 'puff-out-top'}
@@ -147,6 +148,7 @@ const FixedGear = () => {
                   },
                   left: {
                     md: 152,
+                    sm: 55,
                     xs: 46
                   },
                   overflowY: { md:'hidden', xs: 'scroll'}
