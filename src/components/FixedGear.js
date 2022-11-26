@@ -130,7 +130,8 @@ const FixedGear = () => {
                   left: {
                     md: 152,
                     xs: 42
-                  }
+                  },
+                  overflowY: { md:'hidden', xs: 'scroll'}
                 }}
               >
                 <Typography
@@ -147,6 +148,8 @@ const FixedGear = () => {
                   <Typography variant="body2" color="text.secondary">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
                    distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ad recusandae quibusdam,
+                   soluta architecto cupiditate rerum quos magnam quam dolor.
                   </Typography>
                 </CardContent>
                 <CardActions disableSpacing> {/*actions*/}
