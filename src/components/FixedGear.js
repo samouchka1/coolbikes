@@ -1,16 +1,26 @@
-import React from 'react'
+import React, {
+  useState
+} from 'react'
 import {
-  // Toolbar,
   Box,
-  Typography,
   Container,
-  Paper,
+  Card,
+  CardContent,
+  CardActions,
+  IconButton,
+  Typography,
+  // Paper,
+  // Button,
 } from '@mui/material';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import ShareIcon from '@mui/icons-material/Share';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
+import "../App.css"
 import "swiper/css";
 import "swiper/css/pagination";
+
 
 const fixedGearBikes = [
   {
@@ -36,29 +46,15 @@ const slideStyles = {
   height: 'auto',
 }
 
-const slideTextStyles = {
-  backgroundColor: '#ffffffa0',
-  width: {
-    md: '270px',
-    sm: '230px',
-    xs: '130px'
-  }, 
-  color: 'common.black', 
-  padding: '.5rem', 
-  position: 'absolute', 
-  bottom: {
-    md: '80%',
-    sm: '76%',
-    xs: '70%'
-  },
-  left: '6%'
-}
-
 const FixedGear = () => {
+
+  const [ hide, setHide ] = useState(false);
+  const toggleClick =() => {
+    setHide(!hide)
+  }
 
   return (
     <Container maxWidth={false}>
-      {/* <Toolbar sx={{height: 75}} /> */}
       <Box sx={{backgroundColor: 'background.default'}}>
         <Swiper modules={[Pagination]} loop={true} style={{marginBottom: '-4px'}}>
           {fixedGearBikes.map((bike) => (
@@ -66,24 +62,100 @@ const FixedGear = () => {
               <Box 
                 component="img" 
                 alt="bike" 
-                sx={{height: 'auto', 
-                width: '100vw', 
-                textAlign: 'center'}} 
+                sx={{
+                  height: 'auto', 
+                  width: '100vw', 
+                  textAlign: 'center',
+                  zIndex: 0,
+                }} 
                 src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
-                <Paper sx={slideTextStyles}>
-                  <Typography variant="h4"
-                    sx={{
-                      fontSize: {
-                        md: '1.6rem',
-                        sm: '1.2rem',
-                        xs: '.9rem'
-                      }, 
-                    }}
-                  >
-                    {bike.info}
+
+                <Box 
+                  className="ping"
+                  sx={{ 
+                    backgroundColor: 'background.default',
+                    borderRadius: '50px',
+                    padding: '1.2rem',
+                    zIndex: 1,
+                    position: 'absolute', 
+                    top: {
+                      md: 112,
+                      sm: 65,
+                      xs: 10
+                    },
+                    left: {
+                      md: 121,
+                      xs: 9
+                    }
+                  }}
+                />
+                <IconButton 
+                  onClick={toggleClick}
+                  sx={{
+                    zIndex: 2,
+                    position: 'absolute', 
+                    top: {
+                      md: 105,
+                      sm: 58,
+                      xs: 4
+                    },
+                    left: {
+                      md: 115,
+                      xs: 2
+                    }
+                  }}
+                >
+                  <AddCircleIcon fontSize="large" />
+                </IconButton>
+
+              <Card 
+                className={ hide ? 'puff-in-top' : 'puff-out-top'}
+                sx={{ 
+                  maxWidth: {
+                    md: 345,
+                    xs: 240
+                  },
+                  height: {
+                    md: 'auto',
+                    xs: 260
+                  },
+                  borderRadius: '4px',
+                  position: 'absolute', 
+                  top: {
+                    md: 150,
+                    sm: 93,
+                    xs: 5
+                  },
+                  left: {
+                    md: 152,
+                    xs: 42
+                  }
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: {
+                      md: '1.6rem',
+                      xs: '1.2rem'
+                    }
+                  }}
+                >
+                  {bike.info}
+                </Typography>
+                <CardContent> {/*content*/}
+                  <Typography variant="body2" color="text.secondary">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
+                   distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
                   </Typography>
-                </Paper>
+                </CardContent>
+                <CardActions disableSpacing> {/*actions*/}
+                  <IconButton aria-label="share">
+                    <ShareIcon />
+                  </IconButton>
+                </CardActions>
+              </Card>
+              
             </SwiperSlide>
           ))}
         </Swiper>

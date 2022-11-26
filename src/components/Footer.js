@@ -237,7 +237,7 @@ const Footer = () => {
                         // className="App-logo"
                         component="img"
                         alt="CoolBikes"
-                        src={process.env.PUBLIC_URL + '/images/modern-logo.png'}
+                        src={process.env.PUBLIC_URL + '/images/icon-home.png'}
                         height="5rem"
                         sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
                     />
