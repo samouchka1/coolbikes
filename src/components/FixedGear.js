@@ -72,6 +72,7 @@ const FixedGear = () => {
                 src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
               <Box 
+                // === BACKGROUND === 
                 sx={{ 
                   backgroundColor: '#ffffff41',
                   borderRadius: '50px',
@@ -91,6 +92,7 @@ const FixedGear = () => {
                 }}
               />
               <Box 
+                // === PING ===
                 className="ping"
                 sx={{ 
                   backgroundColor: 'background.default',
@@ -110,6 +112,7 @@ const FixedGear = () => {
                 }}
               />
               <IconButton 
+                // === ICON ===
                 aria-label="view info"
                 onClick={toggleClick}
                 sx={{
@@ -150,7 +153,7 @@ const FixedGear = () => {
                   left: {
                     md: 152,
                     sm: 55,
-                    xs: 46
+                    xs: 52
                   },
                   overflowY: { md:'hidden', xs: 'scroll'}
                 }}
