@@ -48,7 +48,7 @@ const slideStyles = {
 
 const FixedGear = () => {
 
-  const [ hide, setHide ] = useState(false);
+  const [ hide, setHide ] = useState(true);
   const toggleClick =() => {
     setHide(!hide)
   }
