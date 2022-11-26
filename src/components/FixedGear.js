@@ -80,11 +80,12 @@ const FixedGear = () => {
                   position: 'absolute', 
                   top: {
                     md: 108,
-                    sm: 61,
+                    sm: 60,
                     xs: 6
                   },
                   left: {
                     md: 116,
+                    sm: 4,
                     xs: 5
                   }
                 }}
