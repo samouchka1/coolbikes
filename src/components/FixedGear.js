@@ -86,7 +86,7 @@ const FixedGear = () => {
                   left: {
                     md: 117,
                     sm: 4,
-                    xs: 5
+                    xs: 4
                   }
                 }}
               />
