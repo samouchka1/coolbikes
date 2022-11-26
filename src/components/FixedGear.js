@@ -79,7 +79,7 @@ const FixedGear = () => {
                   zIndex: 1,
                   position: 'absolute', 
                   top: {
-                    md: 108,
+                    md: 107,
                     sm: 60,
                     xs: 6
                   },
