@@ -13,6 +13,7 @@ import {
   // Button,
 } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
+import CloseIcon from '@mui/icons-material/Close';
 import ShareIcon from '@mui/icons-material/Share';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
@@ -70,7 +71,24 @@ const FixedGear = () => {
                 }} 
                 src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
-
+                <Box 
+                  sx={{ 
+                    backgroundColor: '#ffffff41',
+                    borderRadius: '50px',
+                    padding: '1.5rem',
+                    zIndex: 1,
+                    position: 'absolute', 
+                    top: {
+                      md: 108,
+                      sm: 65,
+                      xs: 6
+                    },
+                    left: {
+                      md: 116,
+                      xs: 5
+                    }
+                  }}
+                />
                 <Box 
                   className="ping"
                   sx={{ 
@@ -106,7 +124,7 @@ const FixedGear = () => {
                     }
                   }}
                 >
-                  <AddCircleIcon fontSize="large" />
+                  { hide ? <CloseIcon fontSize="large" /> : <AddCircleIcon fontSize="large" />}
                 </IconButton>
 
               <Card 
