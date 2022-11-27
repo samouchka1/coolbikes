@@ -82,12 +82,12 @@ const FixedGear = () => {
                   position: 'absolute', 
                   top: {
                     md: 112,
-                    sm: 65,
-                    xs: 10
+                    sm: 66,
+                    xs: 11
                   },
                   left: {
                     md: 121,
-                    xs: 9
+                    xs: 8
                   }
                 }}
               />
@@ -97,7 +97,7 @@ const FixedGear = () => {
                 onClick={toggleClick}
                 sx={{
                   padding: '.45rem',
-                  backgroundColor: '#ffffff41',
+                  backgroundColor: '#ffffff70', //bgcolor
                   zIndex: 2,
                   position: 'absolute', 
                   top: {
