@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 const arrayNavLinks = [
   {
-    name: 'fixed gear',
+    name: 'fixed\u00A0gear',
     route: '/fixedgear'
   },
   {
@@ -64,9 +64,9 @@ const Navbar = () => {
       {/* <Bounce direction="down"> */}
         <AppBar sx={navBar}>
           <Toolbar>
-            <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.5rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
-              <IconButton >
-                <Link style={navLinks} to='/'>
+            <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.65rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
+              <IconButton sx={{margin: '0 -10px'}}>
+                <Link to='/'>
                   <Box
                     id="#top"
                     component="img"
