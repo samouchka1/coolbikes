@@ -4,7 +4,7 @@ import {
     Container,
     // Paper,
     Toolbar, 
-    Typography,
+    // Typography,
     Box,
     IconButton,
     // Tooltip,
@@ -12,6 +12,25 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 // import { Bounce } from 'react-awesome-reveal';
+
+const arrayNavLinks = [
+  {
+    name: 'fixed gear',
+    route: '/fixedgear'
+  },
+  {
+    name: 'gravel',
+    route: '/gravel'
+  },
+  {
+    name: 'road',
+    route: '/road'
+  },
+  {
+    name: 'about',
+    route: '/about'
+  }
+]
 
 const navBar = {
   position: 'relative',
@@ -38,13 +57,6 @@ const navLinks = {
   },
 }
 
-const navLinksSpacing =  {
-  margin: {
-    md: '1rem 1.2rem',
-    xs: '.5rem'
-  }
-}
-
 const Navbar = () => {
 
   return (
@@ -52,7 +64,7 @@ const Navbar = () => {
       {/* <Bounce direction="down"> */}
         <AppBar sx={navBar}>
           <Toolbar>
-            <Box sx={{display: 'flex', alignItems: 'center'}}>
+            <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.5rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
               <IconButton >
                 <Link style={navLinks} to='/'>
                   <Box
@@ -63,14 +75,11 @@ const Navbar = () => {
                   />
                 </Link>
               </IconButton>
-
-              <Typography sx={navLinksSpacing}>
-                  <Link style={navLinks} to="/fixedgear">fixed gear</Link>
-              </Typography>
-
-              <Typography sx={navLinksSpacing}>
-                <Link style={navLinks} to="/about">about</Link>
-              </Typography>
+              {arrayNavLinks.map((link) => (
+                <Box>
+                  <Link style={navLinks} to={link.route}>{link.name}</Link>
+                </Box>
+              ))}
             </Box>
           </Toolbar>
         </AppBar>

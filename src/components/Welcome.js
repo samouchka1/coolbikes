@@ -15,6 +15,7 @@ const parallaxImageMobile = process.env.PUBLIC_URL + '/images/parallax/banner-mo
 
 
 const parallaxTextStyle = {
+    padding: '.5rem 0',
     position: 'relative',
     top: '37%',
     left: {
@@ -34,7 +35,6 @@ const parallaxTextStyle = {
 const Welcome = () => {
   return (
     <Container maxWidth={false}>
-      {/* <Toolbar sx={{height: 75}} /> */}
       <ParallaxBanner className="parallax-image">
         <ParallaxBannerLayer speed={-30}>
             <Box
@@ -55,15 +55,20 @@ const Welcome = () => {
                     >
                         We are the best in
                     </Typography>
-                    <Typography 
-                        className="titleFont"
+                    <Typography
                         sx={{
+                            fontFamily: 'Racing Sans One',
                             fontSize: { 
                                 md: '4.2rem', 
                                 sm:'3rem',  
                                 xs: '2rem'
                             }, 
-                            lineHeight: '1.2',
+                            lineHeight: 1,
+                            letterSpacing: {
+                                md: '-2px',
+                                xs: '-.75px'
+                            },
+                            color: '#130c37'
                         }}>
                         Performance Cycling
                     </Typography>
