@@ -83,13 +83,14 @@ const FixedGear = () => {
                   zIndex: 1,
                   position: 'absolute', 
                   top: {
-                    md: 112,
-                    sm: 66,
-                    xs: 11
+                    md: 110.25,
+                    sm: 65.75,
+                    xs: 11.65
                   },
                   left: {
-                    md: 121,
-                    xs: 8
+                    md: 120.5,
+                    sm: 9,
+                    xs: 8.25
                   }
                 }}
               />
@@ -121,7 +122,7 @@ const FixedGear = () => {
               </IconButton>
 
               <Card 
-                className={ hide ? 'puff-in-top' : 'puff-out-top'}
+                className={ hide ? 'fade-in' : 'fade-out'}
                 sx={{ 
                   maxWidth: {
                     md: 345,

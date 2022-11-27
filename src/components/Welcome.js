@@ -16,7 +16,7 @@ const parallaxImageMobile = process.env.PUBLIC_URL + '/images/parallax/banner-mo
 
 const parallaxTextStyle = {
     position: 'relative',
-    top: '35%',
+    top: '37%',
     left: {
         md: '10%',
         xs: '0%'
@@ -55,7 +55,16 @@ const Welcome = () => {
                     >
                         We are the best in
                     </Typography>
-                    <Typography sx={{fontSize: { md: '4.2rem', sm:'3rem',  xs: '2rem'}, lineHeight: '1.2'}}>
+                    <Typography 
+                        className="titleFont"
+                        sx={{
+                            fontSize: { 
+                                md: '4.2rem', 
+                                sm:'3rem',  
+                                xs: '2rem'
+                            }, 
+                            lineHeight: '1.2',
+                        }}>
                         Performance Cycling
                     </Typography>
                 </Link>
