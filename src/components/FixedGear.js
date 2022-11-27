@@ -71,6 +71,8 @@ const FixedGear = () => {
                 }} 
                 src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
+
+
               <Box 
                 // === PING ===
                 className="ping"
@@ -96,6 +98,9 @@ const FixedGear = () => {
                 aria-label="view info"
                 onClick={toggleClick}
                 sx={{
+                  "&:hover": {
+                    backgroundColor: '#ffffff70' //bgcolor
+                  },
                   padding: '.45rem',
                   backgroundColor: '#ffffff70', //bgcolor
                   zIndex: 2,
