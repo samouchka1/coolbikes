@@ -26,19 +26,19 @@ const About = () => {
     title: "Fixed Gear",
     text: "Some riders prefer the unique ride fixed gear bikes offer.",
     image: "fixedgear.jpg",
-    bgcolor: 'radial-gradient(circle, rgba(38,60,109,1) 0%, rgba(89,110,159,1) 50%, rgba(255,255,255,1) 100%)'
+    bgcolor: 'radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)'
   }
   const setB = { 
     title: "Gravel", 
     text: "Gravel bikes are built for speed, maneuverability and verstility.", 
     image: "gravel.jpg",
-    bgcolor: 'radial-gradient(circle, rgba(29,134,28,1) 0%, rgba(83,175,81,1) 50%, rgba(249,255,249,1) 100%)' 
+    bgcolor: 'radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)' 
   }
   const setC = { 
     title: "Road", 
     text: "The road bike reigns supreme in speed and efficiency on the road.",
     image: "road.jpg",
-    bgcolor: 'radial-gradient(circle, rgba(134,50,28,1) 0%, rgba(175,81,81,1) 50%, rgba(255,249,249,1) 100%)' 
+    bgcolor: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)' 
   }
 
   const [section, setSection] = useState(setA)

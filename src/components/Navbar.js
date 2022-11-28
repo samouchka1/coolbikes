@@ -49,7 +49,7 @@ const navBar = {
 
 const navLinks = {
   textDecoration: 'none', 
-  color: 'white', 
+  color: 'black', 
   fontWeight: '600',
   fontSize: {
     md: '1.2rem',
@@ -65,7 +65,7 @@ const Navbar = () => {
         <AppBar sx={navBar}>
           <Toolbar>
             <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.65rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
-              <IconButton sx={{margin: '0 -10px'}}>
+              <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -15px'}}}>
                 <Link to='/'>
                   <Box
                     id="#top"

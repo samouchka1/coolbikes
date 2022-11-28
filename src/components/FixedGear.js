@@ -25,31 +25,31 @@ import "swiper/css/pagination";
 
 const fixedGearBikes = [
   {
-    name: 'fixedaffinity.jpg',
+    name: 'fixed1.jpg',
     info: 'The Affinity road bike is a beast of a cycling machine.',
   },
   {
-    name: 'fixednozz.jpg',
+    name: 'fixed2.jpg',
     info: 'This bike is comfortable to ride, yet fast.',
   },
   {
-    name: 'fixedgearnice.jpg',
+    name: 'fixed3.jpg',
     info: 'Beautiful color on frame, this bike is a dream to ride.',
   },
   {
-    name: 'fixedspecial.jpg',
+    name: 'fixed4.jpg',
     info: 'Designed to keep you moving fast, efficiently.',
   }
 ]
 
 const slideStyles = {
-  width: '100vw',
+  width: '100%',
   height: 'auto',
 }
 
 const FixedGear = () => {
 
-  const [ hide, setHide ] = useState(true);
+  const [ hide, setHide ] = useState(false);
   const toggleClick =() => {
     setHide(!hide)
   }
@@ -62,14 +62,14 @@ const FixedGear = () => {
             <SwiperSlide style={slideStyles} key={bike}>
               <Box 
                 component="img" 
-                alt="bike" 
+                alt={bike.name} 
                 sx={{
                   height: 'auto', 
-                  width: '100vw', 
+                  width: '100%', 
                   textAlign: 'center',
                   zIndex: 0,
                 }} 
-                src={process.env.PUBLIC_URL + '/images/' + bike.name} 
+                src={process.env.PUBLIC_URL + '/images/fixed/' + bike.name} 
               />
 
 
@@ -130,8 +130,9 @@ const FixedGear = () => {
                   },
                   height: {
                     md: 'auto',
-                    xs: 260
+                    xs: 235
                   },
+                  padding: {md: '1rem', xs: '0'},
                   borderRadius: '4px',
                   position: 'absolute', 
                   top: {
@@ -144,32 +145,43 @@ const FixedGear = () => {
                     sm: 55,
                     xs: 52
                   },
-                  overflowY: { md:'hidden', xs: 'scroll'}
+                  // overflowY: { md:'hidden', xs: 'scroll'}
                 }}
               >
-                <Typography
-                  sx={{
-                    fontSize: {
-                      md: '1.6rem',
-                      xs: '1.2rem'
-                    }
-                  }}
-                >
-                  {bike.info}
-                </Typography>
-                <CardContent> {/*content*/}
-                  <Typography variant="body2" color="text.secondary">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
-                   distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ad recusandae quibusdam,
-                   soluta architecto cupiditate rerum quos magnam quam dolor.
+                  <Typography sx={{ fontSize: { md: '1.6rem', xs: '1.2rem'}}}>
+                    {bike.info}
                   </Typography>
-                </CardContent>
-                <CardActions disableSpacing> {/*actions*/}
-                  <IconButton aria-label="share">
-                    <ShareIcon />
-                  </IconButton>
-                </CardActions>
+
+                  <CardActions disableSpacing sx={{padding: {md: 'auto', xs:'0'}}}> {/*actions*/}
+                    <IconButton aria-label="share" sx={{margin: '0 auto', padding: 0}}>
+                      <ShareIcon />
+                    </IconButton>
+                  </CardActions>
+
+                  <CardContent 
+                    sx={{ 
+                        padding: {
+                            md: 'auto', 
+                            xs: '0 5'
+                        }, 
+                        height: { 
+                            md: 'auto', 
+                            xs: 150
+                        }, 
+                        overflowY: { 
+                            md:'hidden', 
+                            xs: 'scroll'
+                        }
+                    }}
+                  >
+                    <Typography variant="body2" color="text.secondary">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
+                        distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ad recusandae quibusdam,
+                        soluta architecto cupiditate rerum quos magnam quam dolor.
+                    </Typography>
+                  </CardContent>
+                
               </Card>
               
             </SwiperSlide>

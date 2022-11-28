@@ -8,9 +8,10 @@ import {
 } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import FixedGear from './components/FixedGear';
-import About from './components/About';
 import Welcome from './components/Welcome';
+import FixedGear from './components/FixedGear';
+import Gravel from './components/Gravel';
+import About from './components/About';
 import Footer from './components/Footer';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/fixedgear" element={<FixedGear />} />
+            <Route path="/gravel" element={<Gravel />} />
             <Route path="/about" element={<About />} />
           </Routes>
           <Footer />
