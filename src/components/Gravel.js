@@ -16,11 +16,15 @@ import React, {
   import CloseIcon from '@mui/icons-material/Close';
   import ShareIcon from '@mui/icons-material/Share';
   import { Swiper, SwiperSlide } from "swiper/react";
-  import { Pagination } from "swiper";
+  import { 
+    Pagination,
+    Navigation
+} from "swiper";
   
   import "../App.css"
   import "swiper/css";
   import "swiper/css/pagination";
+  import "swiper/css/navigation";
   
   
   const gravelBikes = [
@@ -57,7 +61,12 @@ import React, {
     return (
       <Container maxWidth={false}>
         <Box sx={{backgroundColor: 'background.default'}}>
-          <Swiper modules={[Pagination]} loop={true} style={{marginBottom: '-4px'}}>
+          <Swiper 
+            modules={[Pagination, Navigation]} 
+            navigation={true}
+            loop={true} 
+            style={{marginBottom: '-4px'}}
+          >
             {gravelBikes.map((bike) => (
               <SwiperSlide style={slideStyles} key={bike}>
                 <Box 

@@ -5,13 +5,21 @@
   text-align: center;
 }
 
+/*Navigation Arrow Button color*/
+.swiper-button-prev, .swiper-button-next {
+  color: #ffffff !important;
+}
+
+@media (max-width: 600px) {
+  .swiper-button-prev, .swiper-button-next {
+    --swiper-navigation-size: 30px;
+  }
+}
 
 /*color test*/
 .colorTest {
   color: #ffffffa1;
 }
-
-
 
 /* parallax image */
 .parallax-image {
