@@ -27,22 +27,30 @@ import React, {
   import "swiper/css/navigation";
   
   
-  const gravelBikes = [
+  export const gravelBikes = [
     {
       name: 'gravel1.jpg',
       info: 'Great comfort yet formidable for the outdoor.',
+      route: '/gravel#gravel1',
+      hash: '#gravel1'
     },
     {
       name: 'gravel2.jpg',
       info: 'A good medium between speed and off-road capability.',
+      route: '/gravel#gravel2',
+      hash: '#gravel2'
     },
     {
       name: 'gravel3.jpg',
       info: 'This versatile bike will ride through any obsctable.',
+      route: '/gravel#gravel3',
+      hash: '#gravel3'
     },
     {
       name: 'gravel4.jpg',
       info: 'Designed for maximum speed in rough terrain.',
+      route: '/gravel#gravel4',
+      hash: '#gravel4'
     }
   ]
   
@@ -70,6 +78,7 @@ import React, {
             {gravelBikes.map((bike) => (
               <SwiperSlide style={slideStyles} key={bike}>
                 <Box 
+                  id={bike.hash}
                   component="img" 
                   alt={bike.name} 
                   sx={{
@@ -98,7 +107,7 @@ import React, {
                     },
                     left: {
                       md: 120.5,
-                      sm: 9,
+                      sm: 46,
                       xs: 8.25
                     }
                   }}
@@ -122,7 +131,7 @@ import React, {
                     },
                     left: {
                       md: 115,
-                      sm: 3,
+                      sm: 40,
                       xs: 2
                     }
                   }}
@@ -146,12 +155,12 @@ import React, {
                     position: 'absolute', 
                     top: {
                       md: 150,
-                      sm: 93,
+                      sm: 115,
                       xs: 5
                     },
                     left: {
                       md: 152,
-                      sm: 55,
+                      sm: 82,
                       xs: 52
                     },
                     // overflowY: { md:'hidden', xs: 'scroll'}

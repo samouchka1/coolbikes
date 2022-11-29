@@ -27,22 +27,30 @@ import React, {
   import "swiper/css/navigation";
   
   
-  const roadBikes = [
+  export const roadBikes = [
     {
       name: 'road1.jpg',
       info: 'Built for speed. A legendary machine.',
+      route: '/road#road1',
+      hash: '#road1'
     },
     {
       name: 'road2.jpg',
       info: 'This bike re-defines what swift means.',
+      route: '/road#road2',
+      hash: '#road2'
     },
     {
       name: 'road3.jpg',
       info: 'Only for the brave. Knows no limits.',
+      route: '/road#road3',
+      hash: '#road3'
     },
     {
       name: 'road4.jpg',
       info: 'Riding this is like riding a dragon.',
+      route: '/road#road4',
+      hash: '#road4'
     }
   ]
   
@@ -69,7 +77,8 @@ import React, {
           >
             {roadBikes.map((bike) => (
               <SwiperSlide style={slideStyles} key={bike}>
-                <Box 
+                <Box
+                  id={bike.hash} 
                   component="img" 
                   alt={bike.name} 
                   sx={{
@@ -98,7 +107,7 @@ import React, {
                     },
                     left: {
                       md: 120.5,
-                      sm: 9,
+                      sm: 46,
                       xs: 8.25
                     }
                   }}
@@ -122,7 +131,7 @@ import React, {
                     },
                     left: {
                       md: 115,
-                      sm: 3,
+                      sm: 40,
                       xs: 2
                     }
                   }}
@@ -146,12 +155,12 @@ import React, {
                     position: 'absolute', 
                     top: {
                       md: 150,
-                      sm: 93,
+                      sm: 115,
                       xs: 5
                     },
                     left: {
                       md: 152,
-                      sm: 55,
+                      sm: 82,
                       xs: 52
                     },
                     // overflowY: { md:'hidden', xs: 'scroll'}

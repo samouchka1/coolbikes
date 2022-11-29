@@ -27,22 +27,30 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 
-const fixedGearBikes = [
+export const fixedGearBikes = [
   {
     name: 'fixed1.jpg',
     info: 'The Affinity road bike is a beast of a cycling machine.',
+    route: '/fixedgear#fixed1',
+    hash: '#fixed1'
   },
   {
     name: 'fixed2.jpg',
     info: 'This bike is comfortable to ride, yet fast.',
+    route: '/fixedgear#fixed2',
+    hash: '#fixed2'
   },
   {
     name: 'fixed3.jpg',
     info: 'Beautiful color on frame, this bike is a dream to ride.',
+    route: '/fixedgear#fixed3',
+    hash: '#fixed3'
   },
   {
     name: 'fixed4.jpg',
     info: 'Designed to keep you moving fast, efficiently.',
+    route: '/fixedgear#fixed4',
+    hash: '#fixed4'
   }
 ]
 
@@ -70,6 +78,7 @@ const FixedGear = () => {
           {fixedGearBikes.map((bike) => (
             <SwiperSlide style={slideStyles} key={bike}>
               <Box 
+                id={bike.hash}
                 component="img" 
                 alt={bike.name} 
                 sx={{
@@ -98,7 +107,7 @@ const FixedGear = () => {
                   },
                   left: {
                     md: 120.5,
-                    sm: 9,
+                    sm: 46,
                     xs: 8.25
                   }
                 }}
@@ -122,7 +131,7 @@ const FixedGear = () => {
                   },
                   left: {
                     md: 115,
-                    sm: 3,
+                    sm: 40,
                     xs: 2
                   }
                 }}
@@ -146,12 +155,12 @@ const FixedGear = () => {
                   position: 'absolute', 
                   top: {
                     md: 150,
-                    sm: 93,
+                    sm: 115,
                     xs: 5
                   },
                   left: {
                     md: 152,
-                    sm: 55,
+                    sm: 82,
                     xs: 52
                   },
                   // overflowY: { md:'hidden', xs: 'scroll'}
