@@ -17,13 +17,13 @@ const Banner = () => {
             margin: 'auto', 
             height: '100vh', 
             border: 'black 1px solid', //test
-            background: 'radial-gradient(circle, rgba(126,147,255,1) 0%, rgba(255,255,255,1) 100%)'
+            background: 'radial-gradient(circle, rgba(149,149,149,1) 0%, rgba(255,255,255,1) 100%)'
         }}>
             <Box sx={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
             }}>
-                <Slide direction="left" delay="50">
+                <Slide direction="left" delay="50" triggerOnce>
                     <Paper sx={{
                         padding: '2rem', 
                         width: {
@@ -31,7 +31,7 @@ const Banner = () => {
                             xs: 175
                         },
                         position: 'relative',
-                        right: '50%'
+                        right: '75%'
                     }}>
                         <Typography>
                             This is a test
@@ -42,7 +42,7 @@ const Banner = () => {
                     </Paper>
                 </Slide>
 
-                <Slide direction="right" delay="80">
+                <Slide direction="right" delay="80" triggerOnce>
                     <Paper sx={{
                         padding: '2rem', 
                         width: {
@@ -50,7 +50,7 @@ const Banner = () => {
                             xs: 175
                         },
                         position: 'relative',
-                        left: '50%'
+                        left: '75%'
                     }}>
                         <Typography>
                             This is a test
