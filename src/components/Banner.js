@@ -25,18 +25,29 @@ const Banner = () => {
             }}>
                 <Slide direction="left" delay="50" triggerOnce>
                     <Paper sx={{
+                        margin: '1rem 0',
                         padding: '2rem', 
                         width: {
                             md: 350,
-                            xs: 175
+                            sm: 225,
+                            xs: 125
                         },
                         position: 'relative',
-                        right: '75%'
+                        right: {
+                            md: '75%',
+                            sm: '60%',
+                            xs: '30%'
+                        },
                     }}>
                         <Typography>
                             This is a test
                         </Typography>
-                        <Typography>
+                        <Typography sx={{
+                            fontSize: {
+                                md: '1rem',
+                                xs: '.85rem'
+                            }
+                        }}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab reprehenderit, aliquam praesentium ipsam officiis illo quod ducimus temporibus sint suscipit aperiam accusantium nobis?
                         </Typography>
                     </Paper>
@@ -44,18 +55,29 @@ const Banner = () => {
 
                 <Slide direction="right" delay="80" triggerOnce>
                     <Paper sx={{
+                        margin: '1rem 0',
                         padding: '2rem', 
                         width: {
                             md: 350,
-                            xs: 175
+                            sm: 225,
+                            xs: 125
                         },
                         position: 'relative',
-                        left: '75%'
+                        left: {
+                            md: '75%',
+                            sm: '60%',
+                            xs: '30%'
+                        },
                     }}>
                         <Typography>
                             This is a test
                         </Typography>
-                        <Typography>
+                        <Typography sx={{
+                            fontSize: {
+                                md: '1rem',
+                                xs: '.85rem'
+                            }
+                        }}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab reprehenderit, aliquam praesentium ipsam officiis illo quod ducimus temporibus sint suscipit aperiam accusantium nobis?
                         </Typography>
                     </Paper>

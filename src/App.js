@@ -33,7 +33,7 @@ function App() {
             <Route path="/road" element={<Road />} />
             <Route path="/about" element={<About />} />
           </Routes>
-          <Banner />
+          <Banner /> {/*this will be a module */}
           <CardSlider />
           <Footer />
         </Router>

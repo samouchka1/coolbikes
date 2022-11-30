@@ -76,20 +76,22 @@ import React, {
           >
             {roadBikes.map((bike) => (
               <SwiperSlide style={slideStyles} key={bike}>
-                <Box
-                  id={bike.hash} 
+                <Box 
                   component="img" 
                   alt={bike.name} 
                   sx={{
                     height: 'auto', 
-                    width: '100%', 
+                    width: {
+                      md: '75%',
+                      xs: '100%',
+                    }, 
                     textAlign: 'center',
                     zIndex: 0,
                   }} 
                   src={process.env.PUBLIC_URL + '/images/' + bike.name} 
                 />
-  
-  
+
+
                 <Box 
                   // === PING ===
                   className="ping"
@@ -100,14 +102,14 @@ import React, {
                     zIndex: 1,
                     position: 'absolute', 
                     top: {
-                      md: 110.25,
+                      md: 110.50,
                       sm: 65.75,
                       xs: 11.65
                     },
                     left: {
-                      md: 120.5,
-                      sm: 46,
-                      xs: 8.25
+                      md: 305.75,
+                      sm: 65.75,
+                      xs: 11.65
                     }
                   }}
                 />
@@ -129,15 +131,15 @@ import React, {
                       xs: 6
                     },
                     left: {
-                      md: 115,
-                      sm: 40,
-                      xs: 2
+                      md: 300,
+                      sm: 60,
+                      xs: 6
                     }
                   }}
                 >
                   { hide ? <CloseIcon fontSize="large" /> : <AddCircleIcon fontSize="large" />}
                 </IconButton>
-  
+
                 <Card 
                   className={ hide ? 'fade-in' : 'fade-out'}
                   sx={{ 
@@ -158,46 +160,45 @@ import React, {
                       xs: 5
                     },
                     left: {
-                      md: 152,
+                      md: 340,
                       sm: 82,
-                      xs: 52
+                      xs: 58
                     },
-                    // overflowY: { md:'hidden', xs: 'scroll'}
                   }}
                 >
                     <Typography sx={{ fontSize: { md: '1.6rem', xs: '1.2rem'}}}>
-                        {bike.info}
+                      {bike.info}
                     </Typography>
-    
+
                     <CardActions disableSpacing sx={{padding: {md: 'auto', xs:'0'}}}> {/*actions*/}
-                        <IconButton aria-label="share" sx={{margin: '0 auto', padding: 0}}>
+                      <IconButton aria-label="share" sx={{margin: '0 auto', padding: 0}}>
                         <ShareIcon />
-                        </IconButton>
+                      </IconButton>
                     </CardActions>
-  
-                    <CardContent
-                        sx={{ 
-                            padding: {
-                                md: 'auto', 
-                                xs: '0 5'
-                            }, 
-                            height: { 
-                                md: 'auto', 
-                                xs: 150
-                            }, 
-                            overflowY: { 
-                                md:'hidden', 
-                                xs: 'scroll'
-                            }
-                        }}
+
+                    <CardContent 
+                      sx={{ 
+                          padding: {
+                              md: 'auto', 
+                              xs: '0 5'
+                          }, 
+                          height: { 
+                              md: 'auto', 
+                              xs: 150
+                          }, 
+                          overflowY: { 
+                              md:'hidden', 
+                              xs: 'scroll'
+                          }
+                      }}
                     >
-                    <Typography variant="body2" color="text.secondary">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
-                        distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ad recusandae quibusdam,
-                        soluta architecto cupiditate rerum quos magnam quam dolor.
-                    </Typography>
-                  </CardContent>
+                      <Typography variant="body2" color="text.secondary">
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
+                          distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
+                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ad recusandae quibusdam,
+                          soluta architecto cupiditate rerum quos magnam quam dolor.
+                      </Typography>
+                    </CardContent>
                   
                 </Card>
                 

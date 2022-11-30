@@ -7,7 +7,7 @@
 
 /*Navigation Arrow Button color*/
 .swiper-button-prev, .swiper-button-next {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 @media (max-width: 600px) {

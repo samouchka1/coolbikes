@@ -69,7 +69,7 @@ const FixedGear = () => {
     <Container maxWidth={false}>
       <Box sx={{backgroundColor: 'background.default'}}>
         <Swiper 
-          modules={[Navigation, HashNavigation]} //test
+          modules={[Navigation, HashNavigation]} 
           navigation={true}
           hashNavigation={{ //test
             watchState: true,
@@ -78,14 +78,17 @@ const FixedGear = () => {
           style={{marginBottom: '-4px'}}
         >
           {fixedGearBikes.map((bike) => (
-            <SwiperSlide style={slideStyles} key={bike} data-hash={bike.hash} id={bike.hash} /*test*/ >
+            <SwiperSlide style={slideStyles} key={bike} data-hash={bike.hash}  id={bike.hash}/*test*/ >
               <Box 
                 
                 component="img" 
                 alt={bike.name} 
                 sx={{
                   height: 'auto', 
-                  width: '100%', 
+                  width: {
+                    md: '75%',
+                    xs: '100%',
+                  }, 
                   textAlign: 'center',
                   zIndex: 0,
                 }} 
@@ -103,14 +106,14 @@ const FixedGear = () => {
                   zIndex: 1,
                   position: 'absolute', 
                   top: {
-                    md: 110.25,
+                    md: 110.50,
                     sm: 65.75,
                     xs: 11.65
                   },
                   left: {
-                    md: 120.5,
-                    sm: 46,
-                    xs: 8.25
+                    md: 305.75,
+                    sm: 65.75,
+                    xs: 11.65
                   }
                 }}
               />
@@ -132,9 +135,9 @@ const FixedGear = () => {
                     xs: 6
                   },
                   left: {
-                    md: 115,
-                    sm: 40,
-                    xs: 2
+                    md: 300,
+                    sm: 60,
+                    xs: 6
                   }
                 }}
               >
@@ -161,11 +164,10 @@ const FixedGear = () => {
                     xs: 5
                   },
                   left: {
-                    md: 152,
+                    md: 340,
                     sm: 82,
-                    xs: 52
+                    xs: 58
                   },
-                  // overflowY: { md:'hidden', xs: 'scroll'}
                 }}
               >
                   <Typography sx={{ fontSize: { md: '1.6rem', xs: '1.2rem'}}}>
