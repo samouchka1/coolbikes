@@ -16,14 +16,13 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CloseIcon from '@mui/icons-material/Close';
 import ShareIcon from '@mui/icons-material/Share';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { 
-  Pagination, 
-  Navigation
+import {  
+  Navigation,
+  HashNavigation //test
 } from "swiper";
 
 import "../App.css"
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 
@@ -70,15 +69,18 @@ const FixedGear = () => {
     <Container maxWidth={false}>
       <Box sx={{backgroundColor: 'background.default'}}>
         <Swiper 
-          modules={[Pagination, Navigation]} 
+          modules={[Navigation, HashNavigation]} //test
           navigation={true}
+          hashNavigation={{ //test
+            watchState: true,
+          }}
           loop={true} 
           style={{marginBottom: '-4px'}}
         >
           {fixedGearBikes.map((bike) => (
-            <SwiperSlide style={slideStyles} key={bike}>
+            <SwiperSlide style={slideStyles} key={bike} data-hash={bike.hash} id={bike.hash} /*test*/ >
               <Box 
-                id={bike.hash}
+                
                 component="img" 
                 alt={bike.name} 
                 sx={{
@@ -87,7 +89,7 @@ const FixedGear = () => {
                   textAlign: 'center',
                   zIndex: 0,
                 }} 
-                src={process.env.PUBLIC_URL + '/images/fixed/' + bike.name} 
+                src={process.env.PUBLIC_URL + '/images/' + bike.name} 
               />
 
 

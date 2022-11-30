@@ -51,9 +51,19 @@ const Welcome = () => {
             <Box component="div" sx={parallaxTextStyle}>
                 <Link href="#styles" sx={{textDecoration: 'none', color: 'common.black'}}>
                     <Typography 
-                        sx={{fontSize: { md: '1.5rem', sm: '1.2rem', xs: '1rem'}, margin: { md: '0 1rem', xs: '0 .5rem'}}}
+                        sx={{
+                            fontSize: { 
+                                md: '1.5rem', 
+                                sm: '1.2rem', 
+                                xs: '1rem'
+                            }, 
+                            margin: { 
+                                md: '0 1rem', 
+                                xs: '0 .5rem'
+                            }
+                        }}
                     >
-                        We are the best in
+                        A tribute to
                     </Typography>
                     <Typography
                         sx={{

@@ -17,7 +17,6 @@ import React, {
   import ShareIcon from '@mui/icons-material/Share';
   import { Swiper, SwiperSlide } from "swiper/react";
   import { 
-    Pagination,
     Navigation
 } from "swiper";
   
@@ -70,7 +69,7 @@ import React, {
       <Container maxWidth={false}>
         <Box sx={{backgroundColor: 'background.default'}}>
           <Swiper 
-            modules={[Pagination, Navigation]} 
+            modules={[Navigation]} 
             navigation={true}
             loop={true} 
             style={{marginBottom: '-4px'}}
@@ -87,7 +86,7 @@ import React, {
                     textAlign: 'center',
                     zIndex: 0,
                   }} 
-                  src={process.env.PUBLIC_URL + '/images/road/' + bike.name} 
+                  src={process.env.PUBLIC_URL + '/images/' + bike.name} 
                 />
   
   

@@ -11,15 +11,15 @@ import {
     CardActionArea
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+// import { HashLink } from 'react-router-hash-link';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { 
-    Pagination,
-    Navigation
+    Navigation,
+    HashNavigation
 } from "swiper";
 
 import "../App.css"
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { roadBikes } from './Road';
@@ -42,10 +42,13 @@ const CardSlider = () => {
 
   return (
     <Container maxWidth={false} sx={{marginTop: '.5rem'}}>
-        <Box>
+        <Box sx={{backgroundColor: '#e0e0e074'}}>
             <Swiper
-                modules={[Pagination, Navigation]} 
+                modules={[Navigation, HashNavigation]} 
                 navigation={true}
+                hashNavigation={{
+                    watchState: true,
+                  }}
                 loop={true} 
                 breakpoints={{
                     600: {
@@ -59,28 +62,38 @@ const CardSlider = () => {
                 }}
             >
                 {allBikes.map((bike) => (
-                    <SwiperSlide style={slideStyles} key={bike}>
-                        <Card sx={{ width: 345, margin: '.5rem 0' }}>
+                    <SwiperSlide 
+                        style={slideStyles} 
+                        key={bike} 
+                        data-hash={bike.hash}
+                    >
+                        <Card sx={{ width: 345, margin: '.25rem 0' }}>
                             <CardActionArea>
-                                <Link to={bike.route}>
-                                    <CardMedia
-                                        component="img"
-                                        alt={bike.name}
-                                        height="auto"
-                                        image={process.env.PUBLIC_URL + '/images/' + bike.name}
-                                    />
-                                    <CardContent>
-                                        {/* <Typography gutterBottom variant="h5" component="div">
-                                            CoolBikes
-                                        </Typography> */}
-                                        <Typography variant="body2" color="text.secondary">
-                                        {bike.info}
-                                        </Typography>
-                                    </CardContent>
-                                    <CardActions>
-                                        <Button size="small">Share</Button>
-                                        <Button size="small">Learn More</Button>
-                                    </CardActions>
+                                <Link to={bike.route} style={{textDecoration: 'none'}}>
+                                    {/* <HashLink
+                                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
+                                        to={bike.hash}
+                                        style={{textDecoration: 'none'}}
+                                    > */}
+                                        <CardMedia
+                                            component="img"
+                                            alt={bike.name}
+                                            height="auto"
+                                            image={process.env.PUBLIC_URL + '/images/' + bike.name}
+                                        />
+                                        <CardContent>
+                                            {/* <Typography gutterBottom variant="h5" component="div">
+                                                CoolBikes
+                                            </Typography> */}
+                                            <Typography variant="body1" color="text.secondary">
+                                            {bike.info}
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <Button size="small">Share</Button>
+                                            <Button size="small">Learn More</Button>
+                                        </CardActions>
+                                    {/* </HashLink> */}
                                 </Link>
                             </CardActionArea>
                         </Card>
