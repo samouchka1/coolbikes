@@ -9,8 +9,6 @@ import React, {
     CardActions,
     IconButton,
     Typography,
-    // Paper,
-    // Button,
   } from '@mui/material';
   import AddCircleIcon from '@mui/icons-material/AddCircle';
   import CloseIcon from '@mui/icons-material/Close';
@@ -61,7 +59,9 @@ import Banner from './module/Banner';
   
   const Gravel = () => {
 
-    const [ section, setSection ] = React.useState('radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)');
+    const [ section, setSection ] = React.useState({
+      bgColor: 'radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)'
+    });
   
     const [ hide, setHide ] = useState(false);
     const toggleClick =() => {
@@ -69,7 +69,9 @@ import Banner from './module/Banner';
     }
   
     return (
+      
       <>
+
       <Container maxWidth={false}>
         <Box sx={{backgroundColor: 'background.default'}}>
           <Swiper 

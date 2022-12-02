@@ -9,8 +9,6 @@ import React, {
     CardActions,
     IconButton,
     Typography,
-    // Paper,
-    // Button,
   } from '@mui/material';
   import AddCircleIcon from '@mui/icons-material/AddCircle';
   import CloseIcon from '@mui/icons-material/Close';
@@ -25,7 +23,7 @@ import React, {
   import "swiper/css/pagination";
   import "swiper/css/navigation";
 
-  
+
 import Banner from './module/Banner';
   
   
@@ -63,7 +61,9 @@ import Banner from './module/Banner';
   
   const Road = () => {
 
-    const [ section, setSection ] = React.useState('radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)');
+    const [ section, setSection ] = React.useState({
+      bgColor: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)'
+    });
   
     const [ hide, setHide ] = useState(false);
     const toggleClick =() => {
@@ -71,7 +71,9 @@ import Banner from './module/Banner';
     }
   
     return (
+
       <>
+
       <Container maxWidth={false}>
         <Box sx={{backgroundColor: 'background.default'}}>
           <Swiper 
@@ -214,9 +216,7 @@ import Banner from './module/Banner';
         </Box>
       </Container>
 
-
       <Banner section={section} setSection={setSection} />
-
 
       </>
     )

@@ -9,8 +9,6 @@ import {
   CardActions,
   IconButton,
   Typography,
-  // Paper,
-  // Button,
 } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import CloseIcon from '@mui/icons-material/Close';
@@ -62,7 +60,9 @@ const slideStyles = {
 
 const FixedGear = () => {
 
-  const [ section, setSection ] = React.useState('radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)');
+  const [ section, setSection ] = useState({
+    bgColor: 'radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)'
+  })
 
   const [ hide, setHide ] = useState(false);
   const toggleClick =() => {
@@ -70,7 +70,9 @@ const FixedGear = () => {
   }
 
   return (
+
     <>
+
     <Container maxWidth={false}>
       <Box sx={{backgroundColor: 'background.default'}}>
         <Swiper 
@@ -217,9 +219,7 @@ const FixedGear = () => {
       </Box>
     </Container>
 
-
     <Banner section={section} setSection={setSection} />
-
 
     </>
     
