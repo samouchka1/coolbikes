@@ -24,6 +24,9 @@ import React, {
   import "swiper/css";
   import "swiper/css/pagination";
   import "swiper/css/navigation";
+
+  
+import Banner from './module/Banner';
   
   
   export const roadBikes = [
@@ -59,6 +62,8 @@ import React, {
   }
   
   const Road = () => {
+
+    const [ section, setSection ] = React.useState('radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)');
   
     const [ hide, setHide ] = useState(false);
     const toggleClick =() => {
@@ -66,6 +71,7 @@ import React, {
     }
   
     return (
+      <>
       <Container maxWidth={false}>
         <Box sx={{backgroundColor: 'background.default'}}>
           <Swiper 
@@ -207,6 +213,12 @@ import React, {
           </Swiper>
         </Box>
       </Container>
+
+
+      <Banner section={section} setSection={setSection} />
+
+
+      </>
     )
   }
   

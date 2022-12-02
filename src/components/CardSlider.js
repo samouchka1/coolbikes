@@ -18,7 +18,7 @@ import {
     HashNavigation
 } from "swiper";
 
-import "../App.css"
+import "../App.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -32,13 +32,13 @@ const slideStyles = {
     display: 'flex'
 }
 
-const CardSlider = () => {
+export const allBikes = [
+    ...roadBikes,
+    ...gravelBikes,
+    ...fixedGearBikes
+]
 
-    const allBikes = [
-        ...roadBikes,
-        ...gravelBikes,
-        ...fixedGearBikes
-    ]
+const CardSlider = () => {
 
   return (
     <Container maxWidth={false} sx={{marginTop: '.5rem'}}>

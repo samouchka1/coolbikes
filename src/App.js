@@ -15,7 +15,6 @@ import Road from './components/Road';
 import About from './components/About';
 import Footer from './components/Footer';
 import CardSlider from './components/CardSlider';
-import Banner from './components/Banner';
 
 function App() {
 
@@ -33,7 +32,6 @@ function App() {
             <Route path="/road" element={<Road />} />
             <Route path="/about" element={<About />} />
           </Routes>
-          <Banner /> {/*this will be a module */}
           <CardSlider />
           <Footer />
         </Router>

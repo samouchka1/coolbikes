@@ -21,10 +21,11 @@ import {
   HashNavigation //test
 } from "swiper";
 
+import Banner from './module/Banner';
+
 import "../App.css"
 import "swiper/css";
 import "swiper/css/navigation";
-
 
 export const fixedGearBikes = [
   {
@@ -58,7 +59,10 @@ const slideStyles = {
   height: 'auto',
 }
 
+
 const FixedGear = () => {
+
+  const [ section, setSection ] = React.useState('radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)');
 
   const [ hide, setHide ] = useState(false);
   const toggleClick =() => {
@@ -66,10 +70,11 @@ const FixedGear = () => {
   }
 
   return (
+    <>
     <Container maxWidth={false}>
       <Box sx={{backgroundColor: 'background.default'}}>
         <Swiper 
-          modules={[Navigation, HashNavigation]} 
+          modules={[Navigation, HashNavigation]} //test
           navigation={true}
           hashNavigation={{ //test
             watchState: true,
@@ -211,6 +216,13 @@ const FixedGear = () => {
         </Swiper>
       </Box>
     </Container>
+
+
+    <Banner section={section} setSection={setSection} />
+
+
+    </>
+    
   )
 }
 

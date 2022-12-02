@@ -3,27 +3,32 @@ import {
     Container,
     Box,
     Typography,
-    Paper
+    Paper,
+    // Button
 } from '@mui/material';
 import { Slide } from "react-awesome-reveal";
 
-const Banner = () => {
+
+const Banner = ({section}) => {
+
+
   return (
     <Container maxWidth={false} sx={{margin: '.50rem 0'}}>
-        <Box sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 'auto', 
-            height: '100vh', 
-            border: 'black 1px solid', //test
-            background: 'radial-gradient(circle, rgba(149,149,149,1) 0%, rgba(255,255,255,1) 100%)'
+        <Box 
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: 'auto', 
+                height: '50vh', 
+                border: 'black 1px solid', //test
+                background: `${section}` // lifted state from FixedGear / Gravel / Road
         }}>
             <Box sx={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
             }}>
-                <Slide direction="left" delay="50" triggerOnce>
+                <Slide direction="left" delay="20" triggerOnce>
                     <Paper sx={{
                         margin: '1rem 0',
                         padding: '2rem', 
@@ -53,7 +58,7 @@ const Banner = () => {
                     </Paper>
                 </Slide>
 
-                <Slide direction="right" delay="80" triggerOnce>
+                <Slide direction="right" triggerOnce>
                     <Paper sx={{
                         margin: '1rem 0',
                         padding: '2rem', 
