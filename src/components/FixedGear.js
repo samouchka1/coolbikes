@@ -70,7 +70,7 @@ const FixedGear = () => {
 
   const [ section, setSection ] = useState({
     title: 'Fixed gear bikes',
-    description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
+    description: 'This is descriptive text. Meant to create filler words used as a template to any potential text. It is worth mentioning this text should be longer.',
     bgImg: 'cyclingfixed.jpg'
   })
 
