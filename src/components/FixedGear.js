@@ -20,6 +20,7 @@ import {
 } from "swiper";
 
 import Banner from './module/Banner';
+import {gradientBgColors } from './About';
 
 import "../App.css"
 import "swiper/css";
@@ -56,10 +57,12 @@ export const fixedGearBikes = [
   }
 ]
 
+
+
 const slideStyles = {
   width: '100%',
   height: 'auto',
-  background: 'radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)',
+  background: gradientBgColors.fixed,
 }
 
 

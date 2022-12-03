@@ -19,6 +19,7 @@ import React, {
 } from "swiper";
 
 import Banner from './module/Banner';
+import {gradientBgColors } from './About';
   
   import "../App.css"
   import "swiper/css";
@@ -59,7 +60,7 @@ import Banner from './module/Banner';
   const slideStyles = {
     width: '100%',
     height: 'auto',
-    background: 'radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)'
+    background: gradientBgColors.gravel
   }
   
   const Gravel = () => {

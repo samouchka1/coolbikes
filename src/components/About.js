@@ -12,6 +12,11 @@ import {
 } from '@mui/material';
 import '../App.css'; //Animista effects
 
+export const gradientBgColors = {
+  fixed : 'radial-gradient(circle, rgba(0,15,143,1) 30%, rgba(0,0,0,1) 100%)',
+  gravel: 'radial-gradient(circle, rgba(0,143,19,1) 30%, rgba(0,0,0,1) 100%)',
+  road: 'radial-gradient(circle, rgba(195,0,0,1) 30%, rgba(0,0,0,1) 100%)'
+}
 
 const buttonStyles= {
   backgroundColor: 'background.default',
@@ -26,19 +31,19 @@ const About = () => {
     title: "Fixed Gear",
     text: "Some riders prefer the unique ride fixed gear bikes offer.",
     image: "fixedgear.jpg",
-    bgcolor: 'radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)'
+    bgcolor: gradientBgColors.fixed
   }
   const setB = { 
     title: "Gravel", 
     text: "Gravel bikes are built for speed, maneuverability and verstility.", 
     image: "gravel.jpg",
-    bgcolor: 'radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)' 
+    bgcolor: gradientBgColors.gravel 
   }
   const setC = { 
     title: "Road", 
     text: "The road bike reigns supreme in speed and efficiency on the road.",
     image: "road.jpg",
-    bgcolor: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)' 
+    bgcolor: gradientBgColors.road
   }
 
   const [section, setSection] = useState(setA)

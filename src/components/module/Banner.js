@@ -23,7 +23,7 @@ const Banner = ({section}) => {
                 //     md: '65vh',
                 //     xs: '80vh'
                 // }, 
-                backgroundImage: `url(${process.env.PUBLIC_URL + '/images/banner/' + section.bgImg})` // lifted state from FixedGear / Gravel / Road
+                background: `center url(${process.env.PUBLIC_URL + '/images/banner/' + section.bgImg})` // lifted state from FixedGear / Gravel / Road
         }}>
             <Box sx={{ 
                 display: 'flex', 

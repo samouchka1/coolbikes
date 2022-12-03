@@ -25,6 +25,7 @@ import React, {
 
 
 import Banner from './module/Banner';
+import {gradientBgColors } from './About';
   
   
   export const roadBikes = [
@@ -61,7 +62,7 @@ import Banner from './module/Banner';
   const slideStyles = {
     width: '100%',
     height: 'auto',
-    background: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)'
+    background: gradientBgColors.road
   }
   
   const Road = () => {
