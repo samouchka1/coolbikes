@@ -50,10 +50,10 @@ const CardSlider = () => {
                 hashNavigation={{
                     watchState: true,
                   }}
-                // autoplay={{
-                // delay: 2500,
-                // disableOnInteraction: false,
-                // }}
+                autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+                }}
                 loop={true} 
                 breakpoints={{
                     600: {
