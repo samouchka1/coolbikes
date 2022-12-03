@@ -62,6 +62,8 @@ import Banner from './module/Banner';
   const Road = () => {
 
     const [ section, setSection ] = React.useState({
+      title: 'Road bikes',
+      description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
       bgColor: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)'
     });
   

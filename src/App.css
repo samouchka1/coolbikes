@@ -35,8 +35,8 @@
 
 /*ANIMISTA EFFECTS */
 .slide-in-blurred-left {
-	-webkit-animation: slide-in-blurred-left 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-	        animation: slide-in-blurred-left 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	-webkit-animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: slide-in-blurred-left 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 .ping {
@@ -53,6 +53,7 @@
 	-webkit-animation: fade-out .35s ease-out both;
 	        animation: fade-out .35s ease-out both;
 }
+
 
 
 /**

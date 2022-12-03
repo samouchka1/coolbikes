@@ -18,11 +18,11 @@ const Banner = ({section}) => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: 'auto', 
-                height: {
-                    md: '65vh',
-                    xs: '80vh'
-                }, 
-                border: 'black 1px solid', //test
+                height: 'contain',
+                // height: {
+                //     md: '65vh',
+                //     xs: '80vh'
+                // }, 
                 background: `${section.bgColor}` // lifted state from FixedGear / Gravel / Road
         }}>
             <Box sx={{ 
@@ -30,23 +30,24 @@ const Banner = ({section}) => {
                 flexDirection: 'column', 
             }}>
                 <Slide direction="left" triggerOnce>
-                    <Paper sx={{
-                        margin: '1rem 0',
-                        padding: '2rem', 
-                        width: {
-                            md: 350,
-                            sm: 225,
-                            xs: 150
-                        },
-                        position: 'relative',
-                        right: {
-                            md: '75%',
-                            sm: '60%',
-                            xs: '20%'
-                        },
+                    <Paper 
+                        sx={{
+                            margin: '1rem 0 .75rem 0',
+                            padding: '2rem', 
+                            width: {
+                                md: 350,
+                                sm: 225,
+                                xs: 150
+                            },
+                            position: 'relative',
+                            right: {
+                                md: '65%',
+                                sm: '60%',
+                                xs: '20%'
+                            },
                     }}>
-                        <Typography>
-                            This is a test
+                        <Typography variant="h5">
+                            {section.title}
                         </Typography>
                         <Typography sx={{
                             fontSize: {
@@ -54,29 +55,30 @@ const Banner = ({section}) => {
                                 xs: '.85rem'
                             }
                         }}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab reprehenderit, aliquam praesentium ipsam officiis illo quod ducimus temporibus sint suscipit aperiam accusantium nobis?
+                            {section.description}
                         </Typography>
                     </Paper>
                 </Slide>
 
                 <Slide direction="right" triggerOnce>
-                    <Paper sx={{
-                        margin: '1rem 0',
-                        padding: '2rem', 
-                        width: {
-                            md: 350,
-                            sm: 225,
-                            xs: 150
-                        },
-                        position: 'relative',
-                        left: {
-                            md: '75%',
-                            sm: '60%',
-                            xs: '20%'
-                        },
+                    <Paper 
+                        sx={{
+                            margin: '.75rem 0 1rem 0',
+                            padding: '2rem', 
+                            width: {
+                                md: 350,
+                                sm: 225,
+                                xs: 150
+                            },
+                            position: 'relative',
+                            left: {
+                                md: '65%',
+                                sm: '60%',
+                                xs: '20%'
+                            },
                     }}>
-                        <Typography>
-                            This is a test
+                        <Typography variant="h5">
+                           {section.title}
                         </Typography>
                         <Typography sx={{
                             fontSize: {
@@ -84,7 +86,7 @@ const Banner = ({section}) => {
                                 xs: '.85rem'
                             }
                         }}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab reprehenderit, aliquam praesentium ipsam officiis illo quod ducimus temporibus sint suscipit aperiam accusantium nobis?
+                            {section.description}
                         </Typography>
                     </Paper>
                 </Slide>
