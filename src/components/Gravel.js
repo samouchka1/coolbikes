@@ -30,31 +30,36 @@ import Banner from './module/Banner';
       name: 'gravel1.jpg',
       info: 'Great comfort yet formidable for the outdoor.',
       route: '/gravel#gravel1',
-      hash: '#gravel1'
+      hash: '#gravel1',
+      type: 'gravel'
     },
     {
       name: 'gravel2.jpg',
       info: 'A good medium between speed and off-road capability.',
       route: '/gravel#gravel2',
-      hash: '#gravel2'
+      hash: '#gravel2',
+      type: 'gravel'
     },
     {
       name: 'gravel3.jpg',
       info: 'This versatile bike will ride through any obsctable.',
       route: '/gravel#gravel3',
-      hash: '#gravel3'
+      hash: '#gravel3',
+      type: 'gravel'
     },
     {
       name: 'gravel4.jpg',
       info: 'Designed for maximum speed in rough terrain.',
       route: '/gravel#gravel4',
-      hash: '#gravel4'
+      hash: '#gravel4',
+      type: 'gravel'
     }
   ]
   
   const slideStyles = {
     width: '100%',
     height: 'auto',
+    background: 'radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)'
   }
   
   const Gravel = () => {
@@ -62,7 +67,7 @@ import Banner from './module/Banner';
     const [ section, setSection ] = React.useState({
       title: 'Gravel bikes',
       description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
-      bgColor: 'radial-gradient(circle, rgba(33,199,31,1) 0%, rgba(102,216,100,1) 50%, rgba(255,255,255,1) 100%)'
+      bgImg: 'cyclinggravel.jpg'
     });
   
     const [ hide, setHide ] = useState(false);

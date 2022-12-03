@@ -30,33 +30,38 @@ import Banner from './module/Banner';
   export const roadBikes = [
     {
       name: 'road1.jpg',
-      info: 'Built for speed. A legendary machine.',
+      info: 'Built for speed. A legendary machine. AKA "Vino Tinto"',
       route: '/road#road1',
-      hash: '#road1'
+      hash: '#road1',
+      type: 'road'
     },
     {
       name: 'road2.jpg',
-      info: 'This bike re-defines what swift means.',
+      info: 'This bike re-defines what swift means. AKA "The Ninja"',
       route: '/road#road2',
-      hash: '#road2'
+      hash: '#road2',
+      type: 'road'
     },
     {
       name: 'road3.jpg',
-      info: 'Only for the brave. Knows no limits.',
+      info: 'Only for the brave. Knows no limits. AKA "Balerion"',
       route: '/road#road3',
-      hash: '#road3'
+      hash: '#road3',
+      type: 'road'
     },
     {
       name: 'road4.jpg',
-      info: 'Riding this is like riding a dragon.',
+      info: 'Riding this bike must be what it\'s like to ride a dragon.',
       route: '/road#road4',
-      hash: '#road4'
+      hash: '#road4',
+      type: 'road'
     }
   ]
   
   const slideStyles = {
     width: '100%',
     height: 'auto',
+    background: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)'
   }
   
   const Road = () => {
@@ -64,7 +69,7 @@ import Banner from './module/Banner';
     const [ section, setSection ] = React.useState({
       title: 'Road bikes',
       description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
-      bgColor: 'radial-gradient(circle, rgba(199,31,31,1) 0%, rgba(216,100,100,1) 50%, rgba(255,255,255,1) 100%)'
+      bgImg: 'cyclingroad.jpg'
     });
   
     const [ hide, setHide ] = useState(false);

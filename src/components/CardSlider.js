@@ -15,7 +15,8 @@ import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { 
     Navigation,
-    HashNavigation
+    HashNavigation,
+    Autoplay
 } from "swiper";
 
 import "../App.css";
@@ -44,11 +45,15 @@ const CardSlider = () => {
     <Container maxWidth={false} sx={{marginTop: '.5rem'}}>
         <Box sx={{backgroundColor: '#e0e0e074'}}>
             <Swiper
-                modules={[Navigation, HashNavigation]} 
+                modules={[Navigation, HashNavigation, Autoplay]} 
                 navigation={true}
                 hashNavigation={{
                     watchState: true,
                   }}
+                // autoplay={{
+                // delay: 2500,
+                // disableOnInteraction: false,
+                // }}
                 loop={true} 
                 breakpoints={{
                     600: {
@@ -68,7 +73,13 @@ const CardSlider = () => {
                         data-hash={bike.hash}
                     >
                         <Card sx={{ width: 345, margin: '.25rem 0' }}>
-                            <CardActionArea>
+                            <CardActionArea
+                                className={
+                                    `${bike.name.includes('fixed') ? 'bluebg' : ''}
+                                    ${bike.name.includes('gravel') ? 'greenbg' : ''}
+                                    ${bike.name.includes('road') ? 'redbg' : ''}`
+                                }
+                            >
                                 <Link to={bike.route} style={{textDecoration: 'none'}}>
                                     {/* <HashLink
                                         scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
@@ -82,9 +93,20 @@ const CardSlider = () => {
                                             image={process.env.PUBLIC_URL + '/images/' + bike.name}
                                         />
                                         <CardContent>
-                                            {/* <Typography gutterBottom variant="h5" component="div">
-                                                CoolBikes
-                                            </Typography> */}
+                                            <Typography
+                                                sx={{
+                                                    fontSize: '12px',
+                                                    padding: '5px',
+                                                    borderRadius: '50px',
+                                                    margin: '.5rem 0',
+                                                    width: 'fit-content'
+                                                }}
+                                                className={
+                                                    `${bike.name.includes('fixed') ? 'bluetxt' : ''}
+                                                    ${bike.name.includes('gravel') ? 'greentxt' : ''}
+                                                    ${bike.name.includes('road') ? 'redtxt' : ''}`
+                                                }
+                                            >{bike.type}</Typography>
                                             <Typography variant="body1" color="text.secondary">
                                             {bike.info}
                                             </Typography>

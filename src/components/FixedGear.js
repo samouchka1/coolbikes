@@ -30,31 +30,36 @@ export const fixedGearBikes = [
     name: 'fixed1.jpg',
     info: 'The Affinity road bike is a beast of a cycling machine.',
     route: '/fixedgear#fixed1',
-    hash: '#fixed1'
+    hash: '#fixed1',
+    type: 'fixed'
   },
   {
     name: 'fixed2.jpg',
-    info: 'This bike is comfortable to ride, yet fast.',
+    info: 'This bike is comfortable to ride, yet fast. AKA "Toucan Sam"',
     route: '/fixedgear#fixed2',
-    hash: '#fixed2'
+    hash: '#fixed2',
+    type: 'fixed'
   },
   {
     name: 'fixed3.jpg',
     info: 'Beautiful color on frame, this bike is a dream to ride.',
     route: '/fixedgear#fixed3',
-    hash: '#fixed3'
+    hash: '#fixed3',
+    type: 'fixed'
   },
   {
     name: 'fixed4.jpg',
     info: 'Designed to keep you moving fast, efficiently.',
     route: '/fixedgear#fixed4',
-    hash: '#fixed4'
+    hash: '#fixed4',
+    type: 'fixed'
   }
 ]
 
 const slideStyles = {
   width: '100%',
   height: 'auto',
+  background: 'radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)',
 }
 
 
@@ -63,7 +68,7 @@ const FixedGear = () => {
   const [ section, setSection ] = useState({
     title: 'Fixed gear bikes',
     description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
-    bgColor: 'radial-gradient(circle, rgba(31,45,199,1) 0%, rgba(100,107,216,1) 50%, rgba(255,255,255,1) 100%)'
+    bgImg: 'cyclingfixed.jpg'
   })
 
   const [ hide, setHide ] = useState(false);

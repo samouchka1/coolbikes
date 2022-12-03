@@ -5,6 +5,34 @@
   text-align: center;
 }
 
+/* CardSlider colors */
+.bluebg:hover {
+  background-color: #1212a23c;
+}
+.bluetxt {
+  color: #0000ffa1;
+  border: solid .5px #0000ffa1;
+  background-color: #0000ff03;
+}
+
+.greenbg:hover {
+  background-color: #11a42239;
+}
+.greentxt {
+  color: #008000a1;
+  border: solid .5px #008000a1;
+  background-color: #00800003;
+}
+
+.redbg:hover {
+  background-color: #a9141439;
+}
+.redtxt {
+  color: #ff0000a1;
+  border: solid .5px #ff0000a1;
+  background-color: #ff000003;
+}
+
 /*Navigation Arrow Button color*/
 .swiper-button-prev, .swiper-button-next {
   color: #000000 !important;
