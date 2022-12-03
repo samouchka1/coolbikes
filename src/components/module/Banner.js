@@ -33,7 +33,10 @@ const Banner = ({section}) => {
                     <Paper 
                         sx={{
                             margin: '1rem 0 .75rem 0',
-                            padding: '2rem', 
+                            padding: {
+                                md :'2rem',
+                                xs: '.75rem'
+                            }, 
                             width: {
                                 md: 350,
                                 sm: 225,
@@ -43,7 +46,7 @@ const Banner = ({section}) => {
                             right: {
                                 md: '65%',
                                 sm: '60%',
-                                xs: '20%'
+                                xs: '30%'
                             },
                     }}>
                         <Typography variant="h5">
@@ -64,7 +67,10 @@ const Banner = ({section}) => {
                     <Paper 
                         sx={{
                             margin: '.75rem 0 1rem 0',
-                            padding: '2rem', 
+                            padding: {
+                                md :'2rem',
+                                xs: '.75rem'
+                            },  
                             width: {
                                 md: 350,
                                 sm: 225,
@@ -74,7 +80,7 @@ const Banner = ({section}) => {
                             left: {
                                 md: '65%',
                                 sm: '60%',
-                                xs: '20%'
+                                xs: '30%'
                             },
                     }}>
                         <Typography variant="h5">
