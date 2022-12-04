@@ -2,9 +2,9 @@ import React, {
   // useState,
 } from 'react'
 import {
+  createTheme,
   ThemeProvider,
-  // createTheme,
-  useTheme,
+  // useTheme,
 } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -18,7 +18,15 @@ import CardSlider from './components/CardSlider';
 
 function App() {
 
-  const theme = useTheme();
+  // const theme = useTheme();
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#3c3c7f64'
+      }
+    }
+  })
 
   return (
     <div className="App">

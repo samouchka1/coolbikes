@@ -4,11 +4,32 @@ import {
     Box,
     Typography,
     Paper,
+    Button,
 } from '@mui/material';
+import LoopIcon from '@mui/icons-material/Loop';
 import { Slide } from "react-awesome-reveal";
+
+import "../../App.css"
+
+const buttonStyles = {
+    color: 'text.primary'
+}
 
 
 const Banner = ({section}) => {
+
+    const [open1, setOpen1] = React.useState(false)
+    const [open2, setOpen2] = React.useState(false)
+
+
+    //**use conditional for 'unflip' effect**
+
+    const flipBox1 = () => {
+        setOpen1(!open1)
+    }
+    const flipBox2 = () => {
+        setOpen2(!open2)
+    }
 
   return (
     <Container maxWidth={false} sx={{margin: '.50rem 0'}}>
@@ -31,11 +52,17 @@ const Banner = ({section}) => {
             }}>
                 <Slide direction="left" triggerOnce>
                     <Paper 
+                        className={open1 ? 'flip-horizontal-bottom' : null}
                         sx={{
+                            height: {
+                                md: '9.5rem',
+                                sm: '',
+                                xs: ''
+                            },
                             margin: '1rem 0 .75rem 0',
                             padding: {
                                 md :'2rem',
-                                xs: '.75rem'
+                                xs: '.50rem'
                             }, 
                             width: {
                                 md: 350,
@@ -48,6 +75,7 @@ const Banner = ({section}) => {
                                 sm: '60%',
                                 xs: '30%'
                             },
+                            overflowY: 'auto' //overflowY
                     }}>
                         <Typography variant="h5">
                             {section.title}
@@ -56,21 +84,66 @@ const Banner = ({section}) => {
                             fontSize: {
                                 md: '1rem',
                                 xs: '.85rem'
-                            }
+                            },
+                            margin: '.50rem 0',
+                            
                         }}>
                             {section.description}
                         </Typography>
+                        <Button onClick={flipBox1}>
+                            <LoopIcon sx={buttonStyles} fontSize="small" />
+                        </Button>
                     </Paper>
+
+
+                    {/* test */}
+
+                    {/* <Paper //FLIP SIDE
+                        className=""
+                        sx={{
+                            margin: '1rem 0 .75rem 0',
+                            padding: {
+                                md :'2rem',
+                                xs: '.50rem'
+                            }, 
+                            width: {
+                                md: 350,
+                                sm: 225,
+                                xs: 150
+                            },
+                            position: 'relative',
+                            right: {
+                                md: '65%',
+                                sm: '60%',
+                                xs: '30%'
+                            },
+                        }}
+                    >
+                        <Box 
+                            sx={{
+                                height: '100%',
+                                width: '100%'
+                            }}
+                            component="img"
+                            alt="img"
+                        />
+                    </Paper> */}
+
+                    {/* test */}
+
+
+
                 </Slide>
 
                 <Slide direction="right" triggerOnce>
                     <Paper 
+                        className={open2 ? 'flip-horizontal-bottom' : null}
                         sx={{
-                            margin: '.75rem 0 1rem 0',
+                            margin: '1rem 0 .75rem 0',
                             padding: {
                                 md :'2rem',
-                                xs: '.75rem'
-                            },  
+                                xs: '.50rem'
+                            }, 
                             width: {
                                 md: 350,
                                 sm: 225,
@@ -84,17 +157,23 @@ const Banner = ({section}) => {
                             },
                     }}>
                         <Typography variant="h5">
-                           {section.title}
+                            {section.title}
                         </Typography>
                         <Typography sx={{
                             fontSize: {
                                 md: '1rem',
                                 xs: '.85rem'
-                            }
+                            },
+                            margin: '.50rem 0'
+                            
                         }}>
                             {section.description}
                         </Typography>
+                        <Button onClick={flipBox2}>
+                            <LoopIcon sx={buttonStyles} fontSize="small" />
+                        </Button>
                     </Paper>
+
                 </Slide>
                 
             </Box>

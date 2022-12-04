@@ -33,6 +33,10 @@ const slideStyles = {
     display: 'flex'
 }
 
+const buttonStyles = {
+    color: 'text.primary'
+}
+
 export const allBikes = [
     ...roadBikes,
     ...gravelBikes,
@@ -45,22 +49,28 @@ const CardSlider = () => {
     <Container maxWidth={false} sx={{marginTop: '.5rem'}}>
         <Box sx={{backgroundColor: '#e0e0e074'}}>
             <Swiper
-                modules={[Navigation, HashNavigation, Autoplay]} 
+                modules={[Navigation, HashNavigation, Autoplay]}
                 navigation={true}
+                // spaceBetween={10} 
+                // centeredSlides={true}
                 hashNavigation={{
                     watchState: true,
-                  }}
-                autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
                 }}
+                // autoplay={{
+                // delay: 2500,
+                // disableOnInteraction: false,
+                // }}
                 loop={true} 
                 breakpoints={{
                     600: {
                       slidesPerView: 1,
                       spaceBetween: 10,
                     },
-                    800: {
+                    700 : {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                    1100: {
                       slidesPerView: 4,
                       spaceBetween: 10,
                     },
@@ -72,13 +82,20 @@ const CardSlider = () => {
                         key={bike} 
                         data-hash={bike.hash}
                     >
-                        <Card sx={{ width: 345, margin: '.25rem 0' }}>
+                        <Card 
+                            sx={{ 
+                                width: {
+                                    md: 360,
+                                    xs: '100%'
+                                }, 
+                                margin: '.25rem 0' 
+                            }}>
                             <CardActionArea
-                                className={
-                                    `${bike.name.includes('fixed') ? 'bluebg' : ''}
+                                className={`
+                                    ${bike.name.includes('fixed') ? 'bluebg' : ''}
                                     ${bike.name.includes('gravel') ? 'greenbg' : ''}
-                                    ${bike.name.includes('road') ? 'redbg' : ''}`
-                                }
+                                    ${bike.name.includes('road') ? 'redbg' : ''}
+                                `}
                             >
                                 <Link to={bike.route} style={{textDecoration: 'none'}}>
                                     {/* <HashLink
@@ -101,19 +118,19 @@ const CardSlider = () => {
                                                     margin: '.5rem 0',
                                                     width: 'fit-content'
                                                 }}
-                                                className={
-                                                    `${bike.name.includes('fixed') ? 'bluetxt' : ''}
+                                                className={`
+                                                    ${bike.name.includes('fixed') ? 'bluetxt' : ''}
                                                     ${bike.name.includes('gravel') ? 'greentxt' : ''}
-                                                    ${bike.name.includes('road') ? 'redtxt' : ''}`
-                                                }
+                                                    ${bike.name.includes('road') ? 'redtxt' : ''}
+                                                `}
                                             >{bike.type}</Typography>
                                             <Typography variant="body1" color="text.secondary">
                                             {bike.info}
                                             </Typography>
                                         </CardContent>
                                         <CardActions>
-                                            <Button size="small">Share</Button>
-                                            <Button size="small">Learn More</Button>
+                                            <Button sx={buttonStyles} size="small">Share</Button>
+                                            <Button sx={buttonStyles} size="small">Learn More</Button>
                                         </CardActions>
                                     {/* </HashLink> */}
                                 </Link>

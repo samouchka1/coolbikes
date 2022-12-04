@@ -29,7 +29,7 @@ import {gradientBgColors } from './About';
   export const gravelBikes = [
     {
       name: 'gravel1.jpg',
-      info: 'Great comfort yet formidable for the outdoor.',
+      info: 'Great comfort yet formidable for the outdoor. Tested true.',
       route: '/gravel#gravel1',
       hash: '#gravel1',
       type: 'gravel'

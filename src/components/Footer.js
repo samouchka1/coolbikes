@@ -119,6 +119,7 @@ const footerLinkStyles = {
 const footerSectionStyles = {
     // width: '100%',
     padding: '1rem 3rem 1rem 1rem',
+    color: 'text.primary'
     
 }
 
@@ -159,99 +160,101 @@ const Footer = () => {
                         ))}
                     </List>
                 </Toolbar>
-            </AppBar>
-
-            {/* SECTION */}
-            <Box sx={{display: 'flex', justifyContent: 'space-between', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
-
-                <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
-                    <Tooltip title="CoolBikes">
-                        <Link href="#abc" sx={{textDecoration: 'none'}}>
-                            <Box 
-                                // className="App-logo"
-                                component="img" 
-                                alt="CoolBikes logo" 
-                                height="8rem" 
-                                src={process.env.PUBLIC_URL + '/images/icon-home.png'}
-                            />
-                        </Link>
-                    </Tooltip>
-                </Box>
-                <Box sx={footerSectionStyles}>
-                    <Typography variant="body2" sx={{fontWeight: '600'}}>
-                        Customer Service
-                    </Typography>
-                    <Typography variant="subtitle2">
-                        <List>
-                            {customerService.map((link) => (
-                                <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
-                                    <Link 
-                                        href={link.href} 
-                                        sx={footerLinkStyles}
-                                        // className="hover-underline-animation"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Typography>
-                </Box>
-                <Box sx={footerSectionStyles}>
-                    <Typography variant="body2" sx={{fontWeight: '600'}}>
-                        Our&nbsp;Pages
-                    </Typography>
-                    <Typography variant="subtitle2">
-                        <List>
-                            {ourPages.map((link) => (
-                                <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
-                                    <Link 
-                                        href={link.href} 
-                                        sx={footerLinkStyles}
-                                        // className="hover-underline-animation"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Typography>
-                </Box>
-
-                <Box sx={backToTopButtonStyle}>
-                    <HashLink
-                        scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
-                        to="#top"
-                    >
-                        <Tooltip title="Back to top">
-                            <ArrowUpwardIcon fontSize="large" sx={{color: 'common.black'}} />
-                        </Tooltip>
-                    </HashLink>
-                </Box>
-
-            </Box>
-
-            <Tooltip title="CoolBikes">
-                <Link href="#abc" sx={{textDecoration: 'none', color: 'common.black'}}>
-                    <Box 
-                        // className="App-logo"
-                        component="img"
-                        alt="CoolBikes"
-                        src={process.env.PUBLIC_URL + '/images/icon-home.png'}
-                        height="5rem"
-                        sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
-                    />
-                </Link>
-            </Tooltip>
             
-            <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>
-                <Typography sx={footerTitleStyles}>CoolBikes</Typography>
-                <Typography sx={{fontSize: '15px'}}>1234 Cool St, GreatCity, State</Typography>
 
-                <Typography sx={signatureStyles}>
-                    &copy; {new Date().getFullYear()} samouchka
-                </Typography>
-            </Box>
+                {/* SECTION */}
+                <Box sx={{display: 'flex', justifyContent: 'space-between', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
+
+                    <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
+                        <Tooltip title="CoolBikes">
+                            <Link href="#abc" sx={{textDecoration: 'none'}}>
+                                <Box 
+                                    // className="App-logo"
+                                    component="img" 
+                                    alt="CoolBikes logo" 
+                                    height="8rem" 
+                                    src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                                />
+                            </Link>
+                        </Tooltip>
+                    </Box>
+                    <Box sx={footerSectionStyles}>
+                        <Typography variant="body2" sx={{fontWeight: '600'}}>
+                            Customer Service
+                        </Typography>
+                        <Typography variant="subtitle2">
+                            <List>
+                                {customerService.map((link) => (
+                                    <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
+                                        <Link 
+                                            href={link.href} 
+                                            sx={footerLinkStyles}
+                                            // className="hover-underline-animation"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </Typography>
+                    </Box>
+                    <Box sx={footerSectionStyles}>
+                        <Typography variant="body2" sx={{fontWeight: '600'}}>
+                            Our&nbsp;Pages
+                        </Typography>
+                        <Typography variant="subtitle2">
+                            <List>
+                                {ourPages.map((link) => (
+                                    <ListItem key={link} sx={{margin: {md: '.5rem', xs: '.3rem'}}}>
+                                        <Link 
+                                            href={link.href} 
+                                            sx={footerLinkStyles}
+                                            // className="hover-underline-animation"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </ListItem>
+                                ))}
+                            </List>
+                        </Typography>
+                    </Box>
+
+                    <Box sx={backToTopButtonStyle}>
+                        <HashLink
+                            scroll={(element) => element.scrollIntoView({ behavior: 'smooth' })}
+                            to="#top"
+                        >
+                            <Tooltip title="Back to top">
+                                <ArrowUpwardIcon fontSize="large" sx={{color: 'common.black'}} />
+                            </Tooltip>
+                        </HashLink>
+                    </Box>
+
+                </Box>
+
+                <Tooltip title="CoolBikes">
+                    <Link href="#abc" sx={{textDecoration: 'none', color: 'text.primary'}}>
+                        <Box 
+                            // className="App-logo"
+                            component="img"
+                            alt="CoolBikes"
+                            src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                            height="5rem"
+                            sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
+                        />
+                    </Link>
+                </Tooltip>
+                
+                <Box sx={{textAlign: 'center', margin: '1rem 0', color: '#2f2f2f'}}>
+                    <Typography sx={footerTitleStyles}>CoolBikes</Typography>
+                    <Typography sx={{fontSize: '15px'}}>1234 Cool St, GreatCity, State</Typography>
+
+                    <Typography sx={signatureStyles}>
+                        &copy; {new Date().getFullYear()} samouchka
+                    </Typography>
+                </Box>
+
+            </AppBar>
         </Box>
 
     </Container>

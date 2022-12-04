@@ -19,6 +19,7 @@ export const gradientBgColors = {
 }
 
 const buttonStyles= {
+  color: 'text.primary',
   backgroundColor: 'background.default',
   '&:hover': {
     backgroundColor: '#ffffffa1'
@@ -72,7 +73,15 @@ const About = () => {
           }
         }}
       >
-        <Box sx={{ marginRight: {md: '1rem', xs: '0'}, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <Box sx={{ 
+            marginRight: {
+              md: '1rem', 
+              xs: '0'
+            }, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            alignItems: 'center'
+        }}>
           <Box 
             sx={{
               display: 'flex', 

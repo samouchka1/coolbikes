@@ -7,7 +7,7 @@ import {
     // Typography,
     Box,
     IconButton,
-    // Tooltip,
+    Tooltip,
     // Button,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -32,7 +32,7 @@ const arrayNavLinks = [
   }
 ]
 
-const navBar = {
+const navBarStyles = {
   position: 'relative',
   display: 'flex',
   flexDirection: 'row',
@@ -42,7 +42,7 @@ const navBar = {
   },
   alignItems:'center',
   height: 75, //height
-  backgroundColor : 'primary',
+  backgroundColor : 'primary.main', //bgolor
   width: '100%',
   marginBottom: '.75rem'
 }
@@ -62,19 +62,22 @@ const Navbar = () => {
   return (
     <Container maxWidth={false}>
       {/* <Bounce direction="down"> */}
-        <AppBar sx={navBar}>
+        <AppBar sx={navBarStyles}>
           <Toolbar>
             <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.65rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
-              <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -15px'}}}>
-                <Link to='/'>
-                  <Box
-                    id="#top"
-                    component="img"
-                    alt="CoolBikes"
-                    src={process.env.PUBLIC_URL + '/images/icon-home.png'}
-                  />
-                </Link>
-              </IconButton>
+              <Tooltip title="CoolBikes">
+                <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -15px'}}}>
+                  <Link to='/'>
+                    <Box
+                      id="#top"
+                      component="img"
+                      alt="CoolBikes"
+                      src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                    />
+                  </Link>
+                </IconButton>
+                </Tooltip>
+
               {arrayNavLinks.map((link) => (
                 <Box>
                   <Link style={navLinks} to={link.route}>{link.name}</Link>

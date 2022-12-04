@@ -47,7 +47,7 @@
 
 /*color test*/
 .colorTest {
-  color: #e0e0e074;
+  color: #3c3c7f64;
 }
 
 /* parallax image */
@@ -80,6 +80,11 @@
 .fade-out {
 	-webkit-animation: fade-out .35s ease-out both;
 	        animation: fade-out .35s ease-out both;
+}
+
+.flip-horizontal-bottom {
+	-webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 
@@ -215,5 +220,33 @@
           opacity: 0;
         }
       }
+
+
+/**
+ * ----------------------------------------
+ * animation flip-horizontal-bottom
+ * ----------------------------------------
+ */
+ @-webkit-keyframes flip-horizontal-bottom {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    -webkit-transform: rotateX(0);
+            transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+            transform: rotateX(-180deg);
+  }
+}
+
       
 
