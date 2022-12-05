@@ -95,44 +95,6 @@ const Banner = ({section}) => {
                         </Button>
                     </Paper>
 
-
-                    {/* test */}
-
-                    {/* <Paper //FLIP SIDE
-                        className=""
-                        sx={{
-                            margin: '1rem 0 .75rem 0',
-                            padding: {
-                                md :'2rem',
-                                xs: '.50rem'
-                            }, 
-                            width: {
-                                md: 350,
-                                sm: 225,
-                                xs: 150
-                            },
-                            position: 'relative',
-                            right: {
-                                md: '65%',
-                                sm: '60%',
-                                xs: '30%'
-                            },
-                        }}
-                    >
-                        <Box 
-                            sx={{
-                                height: '100%',
-                                width: '100%'
-                            }}
-                            component="img"
-                            alt="img"
-                        />
-                    </Paper> */}
-
-                    {/* test */}
-
-
-
                 </Slide>
 
                 <Slide direction="right" triggerOnce>

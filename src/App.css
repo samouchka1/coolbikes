@@ -5,6 +5,9 @@
   text-align: center;
 }
 
+
+/* ============== */
+
 /* CardSlider colors */
 .bluebg:hover {
   background-color: #1212a23c;
@@ -33,6 +36,8 @@
   background-color: #ff000003;
 }
 
+/* ============ */
+
 /*Navigation Arrow Button color*/
 .swiper-button-prev, .swiper-button-next {
   color: #000000 !important;
@@ -45,10 +50,21 @@
 }
 
 
+/* ============= */
+
+
+
+
+/* =============== */
+
 /*color test*/
 .colorTest {
   color: #3c3c7f64;
 }
+
+
+
+/* ================= */
 
 /* parallax image */
 .parallax-image {
@@ -59,6 +75,8 @@
     aspect-ratio: 1/2;
   }
 }
+
+/* ============== */
 
 
 /*ANIMISTA EFFECTS */
@@ -232,9 +250,13 @@
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
   }
-  100% {
+  50% {
     -webkit-transform: rotateX(-180deg);
             transform: rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
   }
 }
 @keyframes flip-horizontal-bottom {
@@ -242,9 +264,13 @@
     -webkit-transform: rotateX(0);
             transform: rotateX(0);
   }
-  100% {
+  50% {
     -webkit-transform: rotateX(-180deg);
             transform: rotateX(-180deg);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+            transform: rotateX(-360deg);
   }
 }
 
