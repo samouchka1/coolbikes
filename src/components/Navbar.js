@@ -10,7 +10,7 @@ import {
     Tooltip,
     // Button,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // import { Bounce } from 'react-awesome-reveal';
 
 const arrayNavLinks = [
@@ -47,15 +47,16 @@ const navBarStyles = {
   marginBottom: '.75rem'
 }
 
-const navLinks = {
-  textDecoration: 'none', 
-  color: 'black', 
-  fontWeight: '600',
-  fontSize: {
-    md: '1.2rem',
-    xs: '1rem'
-  },
-}
+// const navLinks = {
+//   textDecoration: 'none', 
+//   color: 'black', 
+//   fontWeight: '600',
+//   fontSize: {
+//     md: '1.2rem',
+//     xs: '1rem'
+//   },
+
+// }
 
 const Navbar = () => {
 
@@ -80,7 +81,27 @@ const Navbar = () => {
 
               {arrayNavLinks.map((link) => (
                 <Box>
-                  <Link style={navLinks} to={link.route}>{link.name}</Link>
+                  <NavLink 
+                    // style={navLinks}
+                    style={({ isActive }) => ({
+                      // color: isActive ? '#fff' : '#000',
+                      background: isActive ? '#9791b96e' : '',
+                      borderBottom: isActive ? 'solid 1px gray' : '',
+
+                      color: 'black',
+                      padding: '.25rem',
+                      borderRadius: '3px',
+                      textDecoration: 'none',  
+                      fontWeight: '600',
+                      fontSize: {
+                        md: '1.2rem',
+                        xs: '1rem'
+                      },
+                    })} 
+                    to={link.route}
+                  >
+                    {link.name}
+                  </NavLink>
                 </Box>
               ))}
             </Box>

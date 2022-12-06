@@ -136,7 +136,7 @@ const backToTopButtonStyle = {
 const Footer = () => {
 
   return (
-    <Container maxWidth={false} sx={{margin: '.75rem 0 4rem'}}>
+    <Container maxWidth={false} sx={{margin: '.75rem 0'}}>
         <Box sx={componentStyles}>
             <AppBar sx={footerStyles}>
                 <Toolbar>
