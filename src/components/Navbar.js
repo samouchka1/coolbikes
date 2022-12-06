@@ -87,6 +87,7 @@ const Navbar = () => {
                       // color: isActive ? '#fff' : '#000',
                       background: isActive ? '#9791b96e' : '',
                       borderBottom: isActive ? 'solid 1px gray' : '',
+                      transition: '.5s',
 
                       color: 'black',
                       padding: '.25rem',
