@@ -16,7 +16,18 @@ import About from './components/About';
 import Footer from './components/Footer';
 import CardSlider from './components/CardSlider';
 
+import { IconButton } from '@mui/material';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+
+const ColorModeContext = React.createContext({
+   toggleColorMode: () => {} 
+});
+
+
 function App() {
+
+  const colorMode = React.useContext(ColorModeContext);
 
   // const theme = useTheme();
 
@@ -41,22 +52,36 @@ function App() {
 
   // const darkModeTheme = createTheme(getDesignTokens('dark'));
 
+  const DarkMode = () => {
+    return (
+      <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
+          {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton>
+    )
+  }
+
+
+
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Welcome />} />
-            <Route path="/fixedgear" element={<FixedGear />} />
-            <Route path="/gravel" element={<Gravel />} />
-            <Route path="/road" element={<Road />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-          <CardSlider />
-          <Footer />
-        </Router>
-      </ThemeProvider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <Navbar
+              DarkMode={DarkMode}
+            />
+            <Routes>
+              <Route path="/" element={<Welcome />} />
+              <Route path="/fixedgear" element={<FixedGear />} />
+              <Route path="/gravel" element={<Gravel />} />
+              <Route path="/road" element={<Road />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+            <CardSlider />
+            <Footer />
+          </Router>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
     </div>
   );
 }

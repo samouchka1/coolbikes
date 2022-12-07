@@ -47,7 +47,13 @@ const navBarStyles = {
   marginBottom: '.75rem'
 }
 
-const Navbar = () => {
+const Navbar = ( 
+  // {
+    // checked, 
+    // setChecked, 
+    // DarkMode
+  // } 
+) => {
 
   // const [checked, setChecked] = React.useState(true);
 
