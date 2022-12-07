@@ -23,10 +23,23 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#493f816e'
+        main: '#493f819a'
       }
     }
   })
+
+  // const getDesignTokens = (mode) => ({
+  //   palette: {
+  //     mode,
+  //     primary: {
+  //       ...(mode === 'dark' && {
+  //         main: '#2a2449a5',
+  //       }),
+  //     },
+  //     },
+  //   });
+
+  // const darkModeTheme = createTheme(getDesignTokens('dark'));
 
   return (
     <div className="App">

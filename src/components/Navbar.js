@@ -47,18 +47,13 @@ const navBarStyles = {
   marginBottom: '.75rem'
 }
 
-// const navLinks = {
-//   textDecoration: 'none', 
-//   color: 'black', 
-//   fontWeight: '600',
-//   fontSize: {
-//     md: '1.2rem',
-//     xs: '1rem'
-//   },
-
-// }
-
 const Navbar = () => {
+
+  // const [checked, setChecked] = React.useState(true);
+
+  // const handleChange = (event) => {
+  //   setChecked(event.target.checked);
+  // };
 
   return (
     <Container maxWidth={false}>
@@ -85,7 +80,7 @@ const Navbar = () => {
                     // style={navLinks}
                     style={({ isActive }) => ({
                       // color: isActive ? '#fff' : '#000',
-                      background: isActive ? '#9791b96e' : '',
+                      background: isActive ? '#b8b2d5c0' : '', //primary.main color slightly darker
                       borderBottom: isActive ? 'solid 1px gray' : '',
                       transition: '.5s',
 
@@ -98,6 +93,7 @@ const Navbar = () => {
                         md: '1.2rem',
                         xs: '1rem'
                       },
+                      caretColor: 'transparent',
                     })} 
                     to={link.route}
                   >
@@ -107,6 +103,13 @@ const Navbar = () => {
               ))}
             </Box>
           </Toolbar>
+
+          {/* <Switch
+            checked={checked}
+            onChange={handleChange}
+            inputProps={{ 'aria-label': 'controlled' }}
+          /> */}
+
         </AppBar>
       {/* </Bounce> */}
 
