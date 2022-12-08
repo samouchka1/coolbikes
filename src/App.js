@@ -2,9 +2,9 @@ import React, {
   // useState,
 } from 'react'
 import {
-  createTheme,
+  // createTheme,
   ThemeProvider,
-  // useTheme,
+  useTheme,
 } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -29,15 +29,15 @@ function App() {
 
   const colorMode = React.useContext(ColorModeContext);
 
-  // const theme = useTheme();
+  const theme = useTheme();
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#493f819a'
-      }
-    }
-  })
+  // const theme = createTheme({
+  //   palette: {
+  //     primary: {
+  //       main: '#493f819a'
+  //     }
+  //   }
+  // })
 
   // const getDesignTokens = (mode) => ({
   //   palette: {

@@ -85,7 +85,7 @@ const Navbar = (
                   <NavLink 
                     style={({ isActive }) => ({
                       // color: isActive ? '#fff' : '#000',
-                      background: isActive ? '#b8b2d5c0' : '', //primary.main color slightly darker
+                      background: isActive ? '#ffffff5f' : '', //primary.main color slightly lighter
                       borderBottom: isActive ? 'solid 1px gray' : '',
                       transition: '.5s',
 
