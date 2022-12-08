@@ -16,7 +16,7 @@ import About from './components/About';
 import Footer from './components/Footer';
 import CardSlider from './components/CardSlider';
 
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 
@@ -54,9 +54,15 @@ function App() {
 
   const DarkMode = () => {
     return (
-      <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-          {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-      </IconButton>
+      <Tooltip title="set Dark / Light mode">
+        <IconButton 
+          onClick={colorMode.toggleColorMode} 
+          // color="text.primary"
+          color="#000"
+        >
+            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        </IconButton>
+      </Tooltip>
     )
   }
 

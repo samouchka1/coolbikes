@@ -2,13 +2,10 @@ import React from 'react';
 import {
     AppBar,
     Container,
-    // Paper,
     Toolbar, 
-    // Typography,
     Box,
     IconButton,
     Tooltip,
-    // Button,
 } from '@mui/material';
 import { Link, NavLink } from 'react-router-dom';
 // import { Bounce } from 'react-awesome-reveal';
@@ -36,10 +33,7 @@ const navBarStyles = {
   position: 'relative',
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: {
-    md: 'left',
-    xs: 'center'
-  },
+  justifyContent: 'space-between',
   alignItems:'center',
   height: 75, //height
   backgroundColor : 'primary.main', //bgolor
@@ -48,11 +42,11 @@ const navBarStyles = {
 }
 
 const Navbar = ( 
-  // {
+  {
     // checked, 
     // setChecked, 
-    // DarkMode
-  // } 
+    DarkMode
+  } 
 ) => {
 
   // const [checked, setChecked] = React.useState(true);
@@ -65,16 +59,22 @@ const Navbar = (
     <Container maxWidth={false}>
       {/* <Bounce direction="down"> */}
         <AppBar sx={navBarStyles}>
-          <Toolbar>
-            <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.65rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
+          <Toolbar sx={{padding: { md: '0 1rem', xs: '0'}, justifyContent: 'left'}}>
+            <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.25rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
               <Tooltip title="CoolBikes">
-                <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -15px'}}}>
+                <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -10px 0 -5px'}}}>
                   <Link to='/'>
                     <Box
                       id="#top"
                       component="img"
                       alt="CoolBikes"
                       src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                      sx={{
+                        height: {
+                          md: '60px',
+                          xs: '50px'
+                        }
+                      }}
                     />
                   </Link>
                 </IconButton>
@@ -83,7 +83,6 @@ const Navbar = (
               {arrayNavLinks.map((link) => (
                 <Box>
                   <NavLink 
-                    // style={navLinks}
                     style={({ isActive }) => ({
                       // color: isActive ? '#fff' : '#000',
                       background: isActive ? '#b8b2d5c0' : '', //primary.main color slightly darker
@@ -91,7 +90,7 @@ const Navbar = (
                       transition: '.5s',
 
                       color: 'black',
-                      padding: '.25rem',
+                      padding: '.20rem',
                       borderRadius: '3px',
                       textDecoration: 'none',  
                       fontWeight: '600',
@@ -107,15 +106,22 @@ const Navbar = (
                   </NavLink>
                 </Box>
               ))}
+
             </Box>
+
+            
           </Toolbar>
 
-          {/* <Switch
-            checked={checked}
-            onChange={handleChange}
-            inputProps={{ 'aria-label': 'controlled' }}
-          /> */}
-
+          <Box 
+            sx={{
+              padding: {
+                md: '0 24px', 
+                xs: '0'
+              }
+          }}>
+            <DarkMode />
+          </Box>
+          
         </AppBar>
       {/* </Bounce> */}
 
