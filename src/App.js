@@ -2,10 +2,13 @@ import React, {
   // useState,
 } from 'react'
 import {
-  // createTheme,
   ThemeProvider,
-  useTheme,
+  // useTheme,
+  createTheme,
 } from '@mui/material/styles';
+import {
+  Box
+} from '@mui/material';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Welcome from './components/Welcome';
@@ -27,9 +30,9 @@ const ColorModeContext = React.createContext({
 
 function App() {
 
-  const colorMode = React.useContext(ColorModeContext);
+  // const colorMode = React.useContext(ColorModeContext);
 
-  const theme = useTheme();
+  // const theme = useTheme();
 
   // const theme = createTheme({
   //   palette: {
@@ -52,13 +55,32 @@ function App() {
 
   // const darkModeTheme = createTheme(getDesignTokens('dark'));
 
+  const [mode, setMode] = React.useState('light');
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+      },
+    }),
+    [],
+  );
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
+
   const DarkMode = () => {
     return (
       <Tooltip title="set Dark / Light mode">
         <IconButton 
           onClick={colorMode.toggleColorMode} 
-          // color="text.primary"
-          color="#000"
+          color="text.primary"
         >
             {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
         </IconButton>
@@ -69,26 +91,27 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Box className="App">
       <ColorModeContext.Provider value={colorMode}>
-        <ThemeProvider theme={theme}>
-          <Router>
-            <Navbar
-              DarkMode={DarkMode}
-            />
-            <Routes>
-              <Route path="/" element={<Welcome />} />
-              <Route path="/fixedgear" element={<FixedGear />} />
-              <Route path="/gravel" element={<Gravel />} />
-              <Route path="/road" element={<Road />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-            <CardSlider />
-            <Footer />
-          </Router>
-        </ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <Router>
+              <Navbar
+                DarkMode={DarkMode}
+                mode={mode}
+              />
+              <Routes>
+                <Route path="/" element={<Welcome />} />
+                <Route path="/fixedgear" element={<FixedGear />} />
+                <Route path="/gravel" element={<Gravel />} />
+                <Route path="/road" element={<Road />} />
+                <Route path="/about" element={<About />} />
+              </Routes>
+              <CardSlider />
+              <Footer />
+            </Router>
+          </ThemeProvider>
       </ColorModeContext.Provider>
-    </div>
+    </Box>
   );
 }
 

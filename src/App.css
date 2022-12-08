@@ -52,7 +52,15 @@
 
 /* ============= */
 
+/* NavLinks color on dark mode */
 
+.darkFont {
+  color: #fff;
+}
+
+.lightFont {
+  color: rgba(0, 0, 0, 0.87);
+}
 
 
 /* =============== */

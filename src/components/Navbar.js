@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import { Link, NavLink } from 'react-router-dom';
 // import { Bounce } from 'react-awesome-reveal';
+import '../App.css';
 
 const arrayNavLinks = [
   {
@@ -44,7 +45,8 @@ const navBarStyles = {
 const Navbar = ( 
   {
     // checked, 
-    // setChecked, 
+    // setChecked,
+    mode, 
     DarkMode
   } 
 ) => {
@@ -83,13 +85,12 @@ const Navbar = (
               {arrayNavLinks.map((link) => (
                 <Box>
                   <NavLink 
+                    className={mode === 'light' ? 'lightFont' : 'darkFont'}
                     style={({ isActive }) => ({
                       // color: isActive ? '#fff' : '#000',
                       background: isActive ? '#ffffff5f' : '', //primary.main color slightly lighter
-                      borderBottom: isActive ? 'solid 1px gray' : '',
+                      // borderBottom: isActive ? 'solid 1px gray' : '',
                       transition: '.5s',
-
-                      color: 'black',
                       padding: '.20rem',
                       borderRadius: '3px',
                       textDecoration: 'none',  
