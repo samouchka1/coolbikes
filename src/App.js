@@ -22,15 +22,26 @@ import CardSlider from './components/CardSlider';
 import { IconButton, Tooltip } from '@mui/material';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
+// import useMediaQuery from '@mui/material/useMediaQuery'; //test
 
 const ColorModeContext = React.createContext({
    toggleColorMode: () => {} 
 });
 
 
-function App() {
+const App = () => {
 
   // const theme = useTheme();
+
+  //test
+  // const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  // const [mode, setMode] = React.useState();
+
+  // React.useEffect(() => {
+  //   setMode(prefersDarkMode ? 'dark' : 'light');
+  // }, [prefersDarkMode]);
+
+
 
   const [mode, setMode] = React.useState('light');
   const colorMode = React.useMemo(
@@ -64,6 +75,9 @@ function App() {
       }),
     [mode],
   );
+
+  //Body background color on DarkMode
+  mode === 'light' ? document.body.style.backgroundColor = '#fff' : document.body.style.backgroundColor = '#000';
 
   const DarkMode = () => {
     return (
