@@ -55,7 +55,7 @@ function App() {
 
   // const darkModeTheme = createTheme(getDesignTokens('dark'));
 
-  const [mode, setMode] = React.useState('light');
+  const [mode, setMode] = React.useState('dark');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -95,16 +95,13 @@ function App() {
       <ColorModeContext.Provider value={colorMode}>
           <ThemeProvider theme={theme}>
             <Router>
-              <Navbar
-                DarkMode={DarkMode}
-                mode={mode}
-              />
+              <Navbar DarkMode={DarkMode} mode={mode} />
               <Routes>
                 <Route path="/" element={<Welcome />} />
-                <Route path="/fixedgear" element={<FixedGear />} />
-                <Route path="/gravel" element={<Gravel />} />
-                <Route path="/road" element={<Road />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/fixedgear" element={<FixedGear mode={mode} />} />
+                <Route path="/gravel" element={<Gravel mode={mode} />} />
+                <Route path="/road" element={<Road mode={mode} />} />
+                <Route path="/about" element={<About mode={mode} />} />
               </Routes>
               <CardSlider />
               <Footer />

@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
 /*google fonts*/
 
+
+/* =============== */
+
+/*color test*/
+.colorTest1 {
+  color: #ffffff1a;
+}
+
+.colorTest2 {
+  color: #493f819a;
+}
+
+.colorTest3-Dark {
+  color: #2a2449a5;
+}
+
+.colorTest4 {
+  color: #000000;
+}
+
+
+/* ============== */
+
 .App {
   text-align: center;
 }
@@ -52,34 +75,13 @@
 
 /* ============= */
 
-/* NavLinks color on dark mode */
-
+/* NavLinks color on DarkMode */
 .darkFont {
   color: #fff;
 }
 
 .lightFont {
-  color: rgba(0, 0, 0, 0.87);
-}
-
-
-/* =============== */
-
-/*color test*/
-.colorTest1 {
-  color: #ffffff5f;
-}
-
-.colorTest2 {
-  color: #493f819a;
-}
-
-.colorTest3-Dark {
-  color: #2a2449a5;
-}
-
-.colorTest4 {
-  color: #000000;
+  color: #000000de;
 }
 
 
@@ -95,8 +97,8 @@
     aspect-ratio: 1/2;
   }
 }
-
 /* ============== */
+
 
 
 /*ANIMISTA EFFECTS */
@@ -124,7 +126,6 @@
 	-webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 	        animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
-
 
 
 /**

@@ -24,7 +24,7 @@ import React, {
   import "swiper/css/navigation";
 
 
-import Banner from './module/Banner';
+import Banner from './modules/Banner';
 import {gradientBgColors } from './About';
   
   
@@ -59,13 +59,14 @@ import {gradientBgColors } from './About';
     }
   ]
   
-  const slideStyles = {
-    width: '100%',
-    height: 'auto',
-    background: gradientBgColors.road
-  }
   
-  const Road = () => {
+  const Road = ({mode}) => {
+
+    const slideStyles = {
+      width: '100%',
+      height: 'auto',
+      background: `${ mode === 'light' ? gradientBgColors.road.light : gradientBgColors.road.dark }`
+    }
 
     const [ section, setSection ] = React.useState({
       title: 'Road bikes',

@@ -12,10 +12,19 @@ import {
 } from '@mui/material';
 import '../App.css'; //Animista effects
 
-export const gradientBgColors = {
-  fixed : 'radial-gradient(circle, rgba(0,15,143,1) 30%, rgba(0,0,0,1) 100%)',
-  gravel: 'radial-gradient(circle, rgba(0,143,19,1) 30%, rgba(0,0,0,1) 100%)',
-  road: 'radial-gradient(circle, rgba(195,0,0,1) 30%, rgba(0,0,0,1) 100%)'
+export const gradientBgColors = { //temp location
+  fixed : {
+    dark: 'radial-gradient(circle, rgba(0,15,143,1) 30%, rgba(0,0,0,1) 100%)',
+    light: 'radial-gradient(circle, rgba(0,15,143,1) 30%, rgba(255,255,255,1) 100%)'
+  },
+  gravel: {
+    dark: 'radial-gradient(circle, rgba(0,143,19,1) 30%, rgba(0,0,0,1) 100%)',
+    light: 'radial-gradient(circle, rgba(0,143,19,1) 30%, rgba(255,255,255,1) 100%)'
+  },
+  road: {
+    dark: 'radial-gradient(circle, rgba(195,0,0,1) 30%, rgba(0,0,0,1) 100%)',
+    light: 'radial-gradient(circle, rgba(195,0,0,1) 30%, rgba(255,255,255,1) 100%)'
+  }
 }
 
 const buttonStyles= {
@@ -26,25 +35,25 @@ const buttonStyles= {
   }
 }
 
-const About = () => {
+const About = ({mode}) => {
 
   const setA = { 
     title: "Fixed Gear",
     text: "Some riders prefer the unique ride fixed gear bikes offer.",
     image: "fixedgear.jpg",
-    bgcolor: gradientBgColors.fixed
+    bgcolor: `${ mode === 'light' ? gradientBgColors.fixed.light : gradientBgColors.fixed.dark }`
   }
   const setB = { 
     title: "Gravel", 
     text: "Gravel bikes are built for speed, maneuverability and verstility.", 
     image: "gravel.jpg",
-    bgcolor: gradientBgColors.gravel 
+    bgcolor: `${ mode === 'light' ? gradientBgColors.gravel.light : gradientBgColors.gravel.dark }`
   }
   const setC = { 
     title: "Road", 
     text: "The road bike reigns supreme in speed and efficiency on the road.",
     image: "road.jpg",
-    bgcolor: gradientBgColors.road
+    bgcolor: `${ mode === 'light' ? gradientBgColors.road.light : gradientBgColors.road.dark }`
   }
 
   const [section, setSection] = useState(setA)
@@ -97,7 +106,7 @@ const About = () => {
               <Button sx={buttonStyles} onClick={()=>setSection(setC)} variant="outlined">Road</Button>
           </Box>
           <Paper
-            className="animation slide-in-blurred-left" //Animista classes
+            className="animation slide-in-blurred-left" //Animista class
             sx={{
               textAlign: 'left', 
               fontWeight: '800', 

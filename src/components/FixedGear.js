@@ -19,8 +19,8 @@ import {
   HashNavigation //test
 } from "swiper";
 
-import Banner from './module/Banner';
-import {gradientBgColors } from './About';
+import Banner from './modules/Banner';
+import {gradientBgColors } from './About'; //temp location
 
 import "../App.css"
 import "swiper/css";
@@ -58,15 +58,15 @@ export const fixedGearBikes = [
 ]
 
 
-
-const slideStyles = {
-  width: '100%',
-  height: 'auto',
-  background: gradientBgColors.fixed,
-}
+const FixedGear = ({mode}) => {
 
 
-const FixedGear = () => {
+
+  const slideStyles = {
+    width: '100%',
+    height: 'auto',
+    background: `${ mode === 'light' ? gradientBgColors.fixed.light : gradientBgColors.fixed.dark }`
+  }
 
   const [ section, setSection ] = useState({
     title: 'Fixed gear bikes',

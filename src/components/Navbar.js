@@ -62,7 +62,16 @@ const Navbar = (
       {/* <Bounce direction="down"> */}
         <AppBar sx={navBarStyles}>
           <Toolbar sx={{padding: { md: '0 1rem', xs: '0'}, justifyContent: 'left'}}>
-            <Box sx={{display: 'flex', gap: { md:'1.5rem', xs: '.25rem'}, justifyContent: 'space-between', alignItems: 'center'}}>
+            <Box 
+              sx={{
+                display: 'flex', 
+                gap: { 
+                  md:'1.5rem', 
+                  xs: '.25rem'
+                }, 
+                justifyContent: 'space-between', 
+                alignItems: 'center'
+            }}>
               <Tooltip title="CoolBikes">
                 <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -10px 0 -5px'}}}>
                   <Link to='/'>
@@ -85,11 +94,11 @@ const Navbar = (
               {arrayNavLinks.map((link) => (
                 <Box>
                   <NavLink 
-                    className={mode === 'light' ? 'lightFont' : 'darkFont'}
+                    className={mode === 'light' ? 'lightFont' : 'darkFont'} //font color set from DarkMode
                     style={({ isActive }) => ({
                       // color: isActive ? '#fff' : '#000',
-                      background: isActive ? '#ffffff5f' : '', //primary.main color slightly lighter
-                      // borderBottom: isActive ? 'solid 1px gray' : '',
+                      background: isActive ? '#ffffff1a' : '', //primary.main color slightly lighter
+                      // borderBottom: isActive ? 'solid 1px #000000de' : '',
                       transition: '.5s',
                       padding: '.20rem',
                       borderRadius: '3px',

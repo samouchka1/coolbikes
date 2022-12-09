@@ -18,7 +18,7 @@ import React, {
     Navigation
 } from "swiper";
 
-import Banner from './module/Banner';
+import Banner from './modules/Banner';
 import {gradientBgColors } from './About';
   
   import "../App.css"
@@ -57,13 +57,15 @@ import {gradientBgColors } from './About';
     }
   ]
   
-  const slideStyles = {
-    width: '100%',
-    height: 'auto',
-    background: gradientBgColors.gravel
-  }
   
-  const Gravel = () => {
+  
+  const Gravel = ({mode}) => {
+
+    const slideStyles = {
+      width: '100%',
+      height: 'auto',
+      background: `${ mode === 'light' ? gradientBgColors.gravel.light : gradientBgColors.gravel.dark }`
+    }
 
     const [ section, setSection ] = React.useState({
       title: 'Gravel bikes',
