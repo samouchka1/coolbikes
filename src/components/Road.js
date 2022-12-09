@@ -25,7 +25,7 @@ import React, {
 
 
 import Banner from './modules/Banner';
-import {gradientBgColors } from './About';
+import {gradientBgColors } from './About'; //temp location
   
   
   export const roadBikes = [

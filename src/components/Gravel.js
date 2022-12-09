@@ -19,7 +19,7 @@ import React, {
 } from "swiper";
 
 import Banner from './modules/Banner';
-import {gradientBgColors } from './About';
+import {gradientBgColors } from './About'; //temp location
   
   import "../App.css"
   import "swiper/css";

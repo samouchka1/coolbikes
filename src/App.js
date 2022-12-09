@@ -55,6 +55,7 @@ function App() {
 
   // const darkModeTheme = createTheme(getDesignTokens('dark'));
 
+
   const [mode, setMode] = React.useState('dark');
   const colorMode = React.useMemo(
     () => ({
@@ -70,6 +71,19 @@ function App() {
       createTheme({
         palette: {
           mode,
+          ...(mode === 'light'
+          ? {
+              // palette values for light mode
+              primary: {
+                main: '#341bc0b1',
+              }
+            }
+          : {
+              // palette values for dark mode
+              primary: {
+                main: '#0e0737a5',
+              }
+            })
         },
       }),
     [mode],
