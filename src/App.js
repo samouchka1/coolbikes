@@ -30,31 +30,7 @@ const ColorModeContext = React.createContext({
 
 function App() {
 
-  // const colorMode = React.useContext(ColorModeContext);
-
   // const theme = useTheme();
-
-  // const theme = createTheme({
-  //   palette: {
-  //     primary: {
-  //       main: '#493f819a'
-  //     }
-  //   }
-  // })
-
-  // const getDesignTokens = (mode) => ({
-  //   palette: {
-  //     mode,
-  //     primary: {
-  //       ...(mode === 'dark' && {
-  //         main: '#2a2449a5',
-  //       }),
-  //     },
-  //     },
-  //   });
-
-  // const darkModeTheme = createTheme(getDesignTokens('dark'));
-
 
   const [mode, setMode] = React.useState('light');
   const colorMode = React.useMemo(
@@ -75,13 +51,13 @@ function App() {
           ? {
               // palette values for light mode
               primary: {
-                main: '#341bc0b1',
+                main: '#2a2fc0c1',
               }
             }
           : {
               // palette values for dark mode
               primary: {
-                main: '#0e0737a5',
+                main: '#071041dc',
               }
             })
         },

@@ -47,7 +47,7 @@ const CardSlider = () => {
 
   return (
     <Container maxWidth={false} sx={{marginTop: '.5rem'}}>
-        <Box sx={{backgroundColor: '#e0e0e074'}}>
+        <Box sx={{backgroundColor: 'background.default'}}>
             <Swiper
                 modules={[Navigation, HashNavigation, Autoplay]}
                 navigation={true}
