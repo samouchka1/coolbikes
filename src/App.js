@@ -56,7 +56,7 @@ function App() {
   // const darkModeTheme = createTheme(getDesignTokens('dark'));
 
 
-  const [mode, setMode] = React.useState('dark');
+  const [mode, setMode] = React.useState('light');
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
