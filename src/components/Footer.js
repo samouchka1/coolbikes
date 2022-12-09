@@ -16,6 +16,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import RedditIcon from '@mui/icons-material/Reddit';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import '../App.css'; //for logo spin, underline effect
+// import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 
 const socialMedia = [
     {
@@ -172,6 +173,7 @@ const Footer = () => {
                                     height="8rem" 
                                     src={process.env.PUBLIC_URL + '/images/icon-home.png'}
                                 />
+                                {/* <DirectionsBikeIcon /> */}
                             </Link>
                         </Tooltip>
                     </Box>
@@ -239,6 +241,10 @@ const Footer = () => {
                             height="5rem"
                             sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
                         />
+                        {/* <DirectionsBikeIcon
+                            fontSize="large"
+                            sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
+                        /> */}
                     </Link>
                 </Tooltip>
                 
