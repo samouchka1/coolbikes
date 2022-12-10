@@ -1,5 +1,5 @@
 import React, {
-  // useState,
+  useState,
 } from 'react'
 import {
   ThemeProvider,
@@ -43,7 +43,8 @@ const App = () => {
 
 
 
-  const [mode, setMode] = React.useState('light');
+  const [mode, setMode] = useState('light');
+
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
@@ -62,7 +63,7 @@ const App = () => {
           ? {
               // palette values for light mode
               primary: {
-                main: '#2a2fc0c1',
+                main: '#2b3bd0c1',
               }
             }
           : {
@@ -92,8 +93,6 @@ const App = () => {
     )
   }
 
-
-
   return (
     <Box className="App">
       <ColorModeContext.Provider value={colorMode}>
@@ -108,7 +107,7 @@ const App = () => {
                 <Route path="/about" element={<About mode={mode} />} />
               </Routes>
               <CardSlider />
-              <Footer />
+              <Footer mode={mode}/>
             </Router>
           </ThemeProvider>
       </ColorModeContext.Provider>

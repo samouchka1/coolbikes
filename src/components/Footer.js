@@ -16,7 +16,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import RedditIcon from '@mui/icons-material/Reddit';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import '../App.css'; //for logo spin, underline effect
-// import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 
 const socialMedia = [
     {
@@ -134,7 +133,7 @@ const backToTopButtonStyle = {
     display: {md: 'block', xs: 'none'}
 }
 
-const Footer = () => {
+const Footer = ({mode}) => {
 
   return (
     <Container maxWidth={false} sx={{margin: '.75rem 0'}}>
@@ -170,10 +169,10 @@ const Footer = () => {
                                     // className="App-logo"
                                     component="img" 
                                     alt="CoolBikes logo" 
-                                    height="8rem" 
-                                    src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                                    height="7rem" 
+                                    // eslint-disable-next-line
+                                    src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
                                 />
-                                {/* <DirectionsBikeIcon /> */}
                             </Link>
                         </Tooltip>
                     </Box>
@@ -237,14 +236,11 @@ const Footer = () => {
                             // className="App-logo"
                             component="img"
                             alt="CoolBikes"
-                            src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                            // eslint-disable-next-line
+                            src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
                             height="5rem"
                             sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
                         />
-                        {/* <DirectionsBikeIcon
-                            fontSize="large"
-                            sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
-                        /> */}
                     </Link>
                 </Tooltip>
                 

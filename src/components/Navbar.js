@@ -34,7 +34,10 @@ const navBarStyles = {
   position: 'relative',
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between',
+  justifyContent: {
+    md: 'space-between',
+    xs: 'center'
+  },
   alignItems:'center',
   height: 75, //height
   backgroundColor : 'primary.main', //bgolor
@@ -42,20 +45,7 @@ const navBarStyles = {
   marginBottom: '.75rem'
 }
 
-const Navbar = ( 
-  {
-    // checked, 
-    // setChecked,
-    mode, 
-    DarkMode
-  } 
-) => {
-
-  // const [checked, setChecked] = React.useState(true);
-
-  // const handleChange = (event) => {
-  //   setChecked(event.target.checked);
-  // };
+const Navbar = ({mode, DarkMode}) => {
 
   return (
     <Container maxWidth={false}>
@@ -79,11 +69,12 @@ const Navbar = (
                       id="#top"
                       component="img"
                       alt="CoolBikes"
-                      src={process.env.PUBLIC_URL + '/images/icon-home.png'}
+                      // eslint-disable-next-line
+                      src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
                       sx={{
                         height: {
                           md: '60px',
-                          xs: '50px'
+                          xs: '45px'
                         }
                       }}
                     />
@@ -99,8 +90,8 @@ const Navbar = (
                       // color: isActive ? '#fff' : '#000',
                       background: isActive ? '#ffffff1a' : '', //primary.main color slightly lighter
                       // borderBottom: isActive ? 'solid 1px #000000de' : '',
-                      transition: '.5s',
-                      padding: '.20rem',
+                      // transition: '.5s',
+                      padding: '.35rem',
                       borderRadius: '3px',
                       textDecoration: 'none',  
                       fontWeight: '600',
