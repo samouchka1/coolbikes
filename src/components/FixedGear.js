@@ -95,7 +95,12 @@ const FixedGear = ({mode}) => {
           style={{marginBottom: '-4px'}}
         >
           {fixedGearBikes.map((bike) => (
-            <SwiperSlide style={slideStyles} key={bike} data-hash={bike.hash}  id={bike.hash}/*test*/ >
+            <SwiperSlide 
+              style={slideStyles} 
+              key={bike} 
+              data-hash={bike.hash}  
+              id={bike.hash}/*test*/ 
+            >
               <Box 
                 
                 component="img" 
@@ -145,7 +150,7 @@ const FixedGear = ({mode}) => {
                   padding: '.45rem',
                   backgroundColor: '#ffffff70', //bgcolor
                   zIndex: 2,
-                  position: 'absolute', 
+                  position: 'absolute',
                   top: {
                     md: 105,
                     sm: 60,
