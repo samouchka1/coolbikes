@@ -60,8 +60,6 @@ export const fixedGearBikes = [
 
 const FixedGear = ({mode}) => {
 
-
-
   const slideStyles = {
     width: '100%',
     height: 'auto',

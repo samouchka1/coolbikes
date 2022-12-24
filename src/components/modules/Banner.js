@@ -5,8 +5,8 @@ import {
     Typography,
     Paper,
     Button,
+    Popover,
 } from '@mui/material';
-import LoopIcon from '@mui/icons-material/Loop';
 import { Slide } from "react-awesome-reveal";
 
 import "../../App.css"
@@ -15,21 +15,66 @@ const buttonStyles = {
     color: 'text.primary'
 }
 
+const leftMenuStyles = {
+    margin: '1rem 0 .75rem 0',
+    padding: {
+        md :'2rem',
+        xs: '.50rem'
+    }, 
+    width: {
+        md: 350,
+        sm: 225,
+        xs: 150
+    },
+    position: 'relative',
+    right: {
+        md: '65%',
+        sm: '60%',
+        xs: '30%'
+    },
+}
+
+const rightMenuStyles = {
+    margin: '1rem 0 .75rem 0',
+    padding: {
+        md :'2rem',
+        xs: '.50rem'
+    }, 
+    width: {
+        md: 350,
+        sm: 225,
+        xs: 150
+    },
+    position: 'relative',
+    left: {
+        md: '65%',
+        sm: '60%',
+        xs: '30%'
+    },
+}
+
 
 const Banner = ({section}) => {
 
-    // const [open1, setOpen1] = React.useState(false)
-    // const [open2, setOpen2] = React.useState(false)
+    const [anchorEl1, setAnchorEl1] = React.useState(false);
+    const [anchorEl2, setAnchorEl2] = React.useState(false);
 
+    const open1 = Boolean(anchorEl1);
+    const open2 = Boolean(anchorEl2);
 
-    // //**use conditional for 'unflip' effect**
+    const handleClick1 = (event) => {
+        setAnchorEl1(event.currentTarget);
+    };
+    const handleClick2 = (event) => {
+        setAnchorEl2(event.currentTarget);
+    };
 
-    // const flipBox1 = () => {
-    //     setOpen1(!open1)
-    // }
-    // const flipBox2 = () => {
-    //     setOpen2(!open2)
-    // }
+    const handleClose1 = () => {
+        setAnchorEl1(null);
+    };
+    const handleClose2 = () => {
+        setAnchorEl2(null);
+    };
 
   return (
     <Container maxWidth={false} sx={{margin: '.50rem 0'}}>
@@ -40,148 +85,90 @@ const Banner = ({section}) => {
                 justifyContent: 'center',
                 margin: 'auto', 
                 height: 'contain',
-                // height: {
-                //     md: '65vh',
-                //     xs: '80vh'
-                // }, 
                 background: `center url(${process.env.PUBLIC_URL + '/images/banner/' + section.bgImg})` // lifted state from FixedGear / Gravel / Road
         }}>
             <Box sx={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
             }}>
+
                 <Slide direction="left" triggerOnce>
-                    {/* <Paper 
-                        className={open1 ? 'flip-horizontal-bottom' : null}
-                        sx={{
-                            margin: '1rem 0 .75rem 0',
-                            padding: {
-                                md :'2rem',
-                                xs: '.50rem'
-                            }, 
-                            width: {
-                                md: 350,
-                                sm: 225,
-                                xs: 150
-                            },
-                            position: 'relative',
-                            right: {
-                                md: '65%',
-                                sm: '60%',
-                                xs: '30%'
-                            },
-                            overflowY: 'auto' //overflowY
-                    }}>
-                        <Typography variant="h5">
-                            {section.title}
-                        </Typography>
-                        <Typography sx={{
-                            fontSize: {
-                                md: '1rem',
-                                xs: '.85rem'
-                            },
-                            margin: '.50rem 0',
-                            
-                        }}>
-                            {section.description}
-                        </Typography>
-                        <Button onClick={flipBox1}>
-                            <LoopIcon sx={buttonStyles} fontSize="small" />
+                    <Paper sx={leftMenuStyles}>
+                                
+                        <Typography variant="h5" sx={{m: '.5rem'}}>{section.title}</Typography>
+                            Coming soon!
+                        <Button sx={buttonStyles} onCLick={handleClick1}>
+                            Info
                         </Button>
-                    </Paper> */}
-
+                    </Paper>
                     <Popover 
-                    anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                    }}
+                        open={open1}
+                        anchorEl={anchorEl1}
+                        onClose={handleClose1}
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                        }}
                     >
-                        <Typography variant="h5">
-                            {section.title}
-                        </Typography>
-                        <Typography sx={{
-                            fontSize: {
-                                md: '1rem',
-                                xs: '.85rem'
-                            },
-                            margin: '.50rem 0',
-                            
-                        }}>
-                            {section.description}
-                        </Typography>
+                        <Box sx={{p: 2}}>
+                            <Typography variant="h5">
+                                {section.title}
+                            </Typography>
+                            <Typography sx={{
+                                fontSize: {
+                                    md: '1rem',
+                                    xs: '.85rem'
+                                },
+                                margin: '.50rem 0',
+                                
+                            }}>
+                                {section.description}
+                            </Typography>
+                        </Box>
                     </Popover>
-
                 </Slide>
 
                 <Slide direction="right" triggerOnce>
-                    {/* <Paper 
-                        className={open2 ? 'flip-horizontal-bottom' : null}
-                        sx={{
-                            margin: '1rem 0 .75rem 0',
-                            padding: {
-                                md :'2rem',
-                                xs: '.50rem'
-                            }, 
-                            width: {
-                                md: 350,
-                                sm: 225,
-                                xs: 150
-                            },
-                            position: 'relative',
-                            left: {
-                                md: '65%',
-                                sm: '60%',
-                                xs: '30%'
-                            },
-                    }}>
-                        <Typography variant="h5">
-                            {section.title}
-                        </Typography>
-                        <Typography sx={{
-                            fontSize: {
-                                md: '1rem',
-                                xs: '.85rem'
-                            },
-                            margin: '.50rem 0'
-                            
-                        }}>
-                            {section.description}
-                        </Typography>
-                        <Button onClick={flipBox2}>
-                            <LoopIcon sx={buttonStyles} fontSize="small" />
+                    <Paper sx={rightMenuStyles}>
+                        <Typography variant="h5" sx={{m: '.5rem'}}>{section.title}</Typography>
+                            Coming soon!
+                        <Button sx={buttonStyles} onCLick={handleClick2}>
+                            Info
                         </Button>
-                    </Paper> */}
-
+                    </Paper>
                     <Popover 
+                        open={open2}
+                        anchorEl={anchorEl2}
+                        onClose={handleClose2}
                         anchorOrigin={{
                             vertical: 'top',
                             horizontal: 'center',
-                          }}
-                          transformOrigin={{
+                        }}
+                        transformOrigin={{
                             vertical: 'bottom',
                             horizontal: 'center',
-                          }}
+                        }}
                     >
-                        <Typography variant="h5">
-                            {section.title}
-                        </Typography>
-                        <Typography sx={{
-                            fontSize: {
-                                md: '1rem',
-                                xs: '.85rem'
-                            },
-                            margin: '.50rem 0',
-                            
-                        }}>
-                            {section.description}
-                        </Typography>
-                       
+                        <Box sx={{p: 2}}>
+                            <Typography variant="h5">
+                                {section.title}
+                            </Typography>
+                            <Typography sx={{
+                                fontSize: {
+                                    md: '1rem',
+                                    xs: '.85rem'
+                                },
+                                margin: '.50rem 0',
+                                
+                            }}>
+                                {section.description}
+                            </Typography>
+                        </Box>
                     </Popover>
-
                 </Slide>
                 
             </Box>
