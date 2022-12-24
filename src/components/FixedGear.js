@@ -102,7 +102,6 @@ const FixedGear = ({mode}) => {
               id={bike.hash}/*test*/ 
             >
               <Box 
-                
                 component="img" 
                 alt={bike.name} 
                 sx={{

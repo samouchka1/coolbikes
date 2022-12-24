@@ -18,18 +18,18 @@ const buttonStyles = {
 
 const Banner = ({section}) => {
 
-    const [open1, setOpen1] = React.useState(false)
-    const [open2, setOpen2] = React.useState(false)
+    // const [open1, setOpen1] = React.useState(false)
+    // const [open2, setOpen2] = React.useState(false)
 
 
-    //**use conditional for 'unflip' effect**
+    // //**use conditional for 'unflip' effect**
 
-    const flipBox1 = () => {
-        setOpen1(!open1)
-    }
-    const flipBox2 = () => {
-        setOpen2(!open2)
-    }
+    // const flipBox1 = () => {
+    //     setOpen1(!open1)
+    // }
+    // const flipBox2 = () => {
+    //     setOpen2(!open2)
+    // }
 
   return (
     <Container maxWidth={false} sx={{margin: '.50rem 0'}}>
@@ -51,14 +51,9 @@ const Banner = ({section}) => {
                 flexDirection: 'column', 
             }}>
                 <Slide direction="left" triggerOnce>
-                    <Paper 
+                    {/* <Paper 
                         className={open1 ? 'flip-horizontal-bottom' : null}
                         sx={{
-                            height: {
-                                md: '9.5rem',
-                                sm: '',
-                                xs: ''
-                            },
                             margin: '1rem 0 .75rem 0',
                             padding: {
                                 md :'2rem',
@@ -93,12 +88,37 @@ const Banner = ({section}) => {
                         <Button onClick={flipBox1}>
                             <LoopIcon sx={buttonStyles} fontSize="small" />
                         </Button>
-                    </Paper>
+                    </Paper> */}
+
+                    <Popover 
+                    anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                    }}
+                    >
+                        <Typography variant="h5">
+                            {section.title}
+                        </Typography>
+                        <Typography sx={{
+                            fontSize: {
+                                md: '1rem',
+                                xs: '.85rem'
+                            },
+                            margin: '.50rem 0',
+                            
+                        }}>
+                            {section.description}
+                        </Typography>
+                    </Popover>
 
                 </Slide>
 
                 <Slide direction="right" triggerOnce>
-                    <Paper 
+                    {/* <Paper 
                         className={open2 ? 'flip-horizontal-bottom' : null}
                         sx={{
                             margin: '1rem 0 .75rem 0',
@@ -134,7 +154,33 @@ const Banner = ({section}) => {
                         <Button onClick={flipBox2}>
                             <LoopIcon sx={buttonStyles} fontSize="small" />
                         </Button>
-                    </Paper>
+                    </Paper> */}
+
+                    <Popover 
+                        anchorOrigin={{
+                            vertical: 'top',
+                            horizontal: 'center',
+                          }}
+                          transformOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                          }}
+                    >
+                        <Typography variant="h5">
+                            {section.title}
+                        </Typography>
+                        <Typography sx={{
+                            fontSize: {
+                                md: '1rem',
+                                xs: '.85rem'
+                            },
+                            margin: '.50rem 0',
+                            
+                        }}>
+                            {section.description}
+                        </Typography>
+                       
+                    </Popover>
 
                 </Slide>
                 
