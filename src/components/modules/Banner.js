@@ -8,11 +8,13 @@ import {
     Popover,
 } from '@mui/material';
 import { Slide } from "react-awesome-reveal";
+import ExpandIcon from '@mui/icons-material/Expand';
 
 import "../../App.css"
 
 const buttonStyles = {
-    color: 'text.primary'
+    color: 'text.primary',
+    margin: '.5rem'
 }
 
 const leftMenuStyles = {
@@ -56,8 +58,8 @@ const rightMenuStyles = {
 
 const Banner = ({section}) => {
 
-    const [anchorEl1, setAnchorEl1] = React.useState(false);
-    const [anchorEl2, setAnchorEl2] = React.useState(false);
+    const [anchorEl1, setAnchorEl1] = React.useState(null);
+    const [anchorEl2, setAnchorEl2] = React.useState(null);
 
     const open1 = Boolean(anchorEl1);
     const open2 = Boolean(anchorEl2);
@@ -96,9 +98,9 @@ const Banner = ({section}) => {
                     <Paper sx={leftMenuStyles}>
                                 
                         <Typography variant="h5" sx={{m: '.5rem'}}>{section.title}</Typography>
-                            Coming soon!
+                        <Typography>Coming soon!</Typography>
                         <Button sx={buttonStyles} onCLick={handleClick1}>
-                            Info
+                            <ExpandIcon />
                         </Button>
                     </Paper>
                     <Popover 
@@ -135,9 +137,9 @@ const Banner = ({section}) => {
                 <Slide direction="right" triggerOnce>
                     <Paper sx={rightMenuStyles}>
                         <Typography variant="h5" sx={{m: '.5rem'}}>{section.title}</Typography>
-                            Coming soon!
+                        <Typography>Coming soon!</Typography> 
                         <Button sx={buttonStyles} onCLick={handleClick2}>
-                            Info
+                            <ExpandIcon />
                         </Button>
                     </Paper>
                     <Popover 
