@@ -25,7 +25,7 @@ import React, {
 
 
 import Banner from './modules/Banner';
-import {gradientBgColors } from './About'; //temp location
+import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles } from '../Styles';
   
   
   export const roadBikes = [
@@ -89,7 +89,7 @@ import {gradientBgColors } from './About'; //temp location
             modules={[Navigation]} 
             navigation={true}
             loop={true} 
-            style={{marginBottom: '-4px'}}
+            style={{marginBottom: 0}}
           >
             {roadBikes.map((bike) => (
               <SwiperSlide style={slideStyles} key={bike}>
@@ -112,76 +112,20 @@ import {gradientBgColors } from './About'; //temp location
                 <Box 
                   // === PING ===
                   className="ping"
-                  sx={{ 
-                    backgroundColor: 'background.default',
-                    borderRadius: '50px',
-                    padding: '1.2rem',
-                    zIndex: 1,
-                    position: 'absolute', 
-                    top: {
-                      md: 110.50,
-                      sm: 65.75,
-                      xs: 11.65
-                    },
-                    left: {
-                      md: 305.75,
-                      sm: 65.75,
-                      xs: 11.65
-                    }
-                  }}
+                  sx={pingStyles}
                 />
                 <IconButton 
                   // === ICON ===
                   aria-label="view info"
                   onClick={toggleClick}
-                  sx={{
-                    "&:hover": {
-                      backgroundColor: '#ffffff70' //bgcolor
-                    },
-                    padding: '.45rem',
-                    backgroundColor: '#ffffff70', //bgcolor
-                    zIndex: 2,
-                    position: 'absolute', 
-                    top: {
-                      md: 105,
-                      sm: 60,
-                      xs: 6
-                    },
-                    left: {
-                      md: 300,
-                      sm: 60,
-                      xs: 6
-                    }
-                  }}
+                  sx={iconStyles}
                 >
                   { hide ? <CloseIcon fontSize="large" /> : <AddCircleIcon fontSize="large" />}
                 </IconButton>
 
                 <Card 
                   className={ hide ? 'fade-in' : 'fade-out'}
-                  sx={{ 
-                    maxWidth: {
-                      md: 345,
-                      xs: 240
-                    },
-                    height: {
-                      md: 'auto',
-                      xs: 235
-                    },
-                    padding: {md: '1rem', xs: '0'},
-                    borderRadius: '4px',
-                    position: 'absolute', 
-                    top: {
-                      md: 150,
-                      sm: 115,
-                      xs: 5
-                    },
-                    left: {
-                      md: 340,
-                      sm: 82,
-                      xs: 58
-                    },
-                  }}
+                  sx={cardStyles}
                 >
                     <Typography sx={{ fontSize: { md: '1.6rem', xs: '1.2rem'}}}>
                       {bike.info}
@@ -194,20 +138,7 @@ import {gradientBgColors } from './About'; //temp location
                     </CardActions>
 
                     <CardContent 
-                      sx={{ 
-                          padding: {
-                              md: 'auto', 
-                              xs: '0 5'
-                          }, 
-                          height: { 
-                              md: 'auto', 
-                              xs: 150
-                          }, 
-                          overflowY: { 
-                              md:'hidden', 
-                              xs: 'scroll'
-                          }
-                      }}
+                      sx={cardContentStyles}
                     >
                       <Typography variant="body2" color="text.secondary">
                           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
