@@ -8,7 +8,9 @@ import {
     Popover,
 } from '@mui/material';
 import { Slide } from "react-awesome-reveal";
-import ExpandIcon from '@mui/icons-material/Expand';
+// import ExpandIcon from '@mui/icons-material/Expand';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
 
 import "../../App.css"
 
@@ -34,6 +36,9 @@ const leftMenuStyles = {
         sm: '60%',
         xs: '30%'
     },
+    '&:hover': {
+        boxShadow: '0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'
+    }
 }
 
 const rightMenuStyles = {
@@ -53,6 +58,9 @@ const rightMenuStyles = {
         sm: '60%',
         xs: '30%'
     },
+    '&:hover': {
+        boxShadow: '0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'
+    }
 }
 
 
@@ -100,7 +108,8 @@ const Banner = ({section}) => {
                         <Typography variant="h5" sx={{m: '.5rem'}}>{section.title}</Typography>
                         <Typography>Coming soon!</Typography>
                         <Button sx={buttonStyles} onCLick={handleClick1}>
-                            <ExpandIcon />
+                            {/* <ExpandIcon /> */}
+                            <KeyboardDoubleArrowDownIcon />
                         </Button>
                     </Paper>
                     <Popover 
@@ -139,7 +148,7 @@ const Banner = ({section}) => {
                         <Typography variant="h5" sx={{m: '.5rem'}}>{section.title}</Typography>
                         <Typography>Coming soon!</Typography> 
                         <Button sx={buttonStyles} onCLick={handleClick2}>
-                            <ExpandIcon />
+                            <KeyboardDoubleArrowUpIcon />
                         </Button>
                     </Paper>
                     <Popover 
