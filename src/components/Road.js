@@ -104,6 +104,8 @@ import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles
                     }, 
                     textAlign: 'center',
                     zIndex: 0,
+                    display: 'block',
+                    margin: '0 auto'
                   }} 
                   src={process.env.PUBLIC_URL + '/images/' + bike.name} 
                 />
