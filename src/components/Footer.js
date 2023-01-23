@@ -164,7 +164,7 @@ const Footer = ({mode}) => {
 
                     <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
                         <Tooltip title="CoolBikes">
-                            <Link href="#abc" sx={{textDecoration: 'none'}}>
+                            <Link href="/" sx={{textDecoration: 'none'}}>
                                 <Box 
                                     // className="App-logo"
                                     component="img" 
@@ -231,7 +231,7 @@ const Footer = ({mode}) => {
                 </Box>
 
                 <Tooltip title="CoolBikes">
-                    <Link href="#abc" sx={{textDecoration: 'none', color: 'text.primary'}}>
+                    <Link href="/" sx={{textDecoration: 'none', color: 'text.primary'}}>
                         <Box 
                             // className="App-logo"
                             component="img"
@@ -239,7 +239,7 @@ const Footer = ({mode}) => {
                             // eslint-disable-next-line
                             src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
                             height="5rem"
-                            sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}}
+                            sx={{display: {md: 'none', xs: 'block'}, margin: '0 auto'}} //mobile view
                         />
                     </Link>
                 </Tooltip>
