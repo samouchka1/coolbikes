@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState
+}from 'react';
 import {
     AppBar,
     Container,
@@ -6,27 +8,33 @@ import {
     Box,
     IconButton,
     Tooltip,
+    Button,
+    Popover,
+    ListItem,
+    Typography
 } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import ClearIcon from '@mui/icons-material/Clear';
 import { Link, NavLink } from 'react-router-dom';
-// import { Bounce } from 'react-awesome-reveal';
+import { Fade } from "react-awesome-reveal";
 import '../App.css';
 
-const arrayNavLinks = [
+const navLinks = [
   {
     name: 'fixed\u00A0gear',
-    route: '/fixedgear'
+    path: '/fixedgear'
   },
   {
     name: 'gravel',
-    route: '/gravel'
+    path: '/gravel'
   },
   {
     name: 'road',
-    route: '/road'
+    path: '/road'
   },
   {
     name: 'about',
-    route: '/about'
+    path: '/about'
   }
 ]
 
@@ -34,10 +42,7 @@ const navBarStyles = {
   position: 'relative',
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: {
-    md: 'space-between',
-    xs: 'center'
-  },
+  justifyContent: 'space-between',
   alignItems:'center',
   height: 75, //height
   backgroundColor : 'primary.main', //bgolor
@@ -47,79 +52,151 @@ const navBarStyles = {
 
 const Navbar = ({mode, DarkMode}) => {
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const openNav = Boolean(anchorEl);
+  const handleClickNav = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseNav = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Container maxWidth={false}>
       {/* <Bounce direction="down"> */}
         <AppBar sx={navBarStyles}>
           <Toolbar sx={{padding: { md: '0 1rem', xs: '0'}, justifyContent: 'left'}}>
-            <Box 
-              sx={{
-                display: 'flex', 
-                gap: { 
-                  md:'1.5rem', 
-                  xs: '.25rem'
-                }, 
-                justifyContent: 'space-between', 
-                alignItems: 'center'
-            }}>
-              <Tooltip title="CoolBikes">
-                <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -10px 0 -5px'}}}>
-                  <Link to='/'>
-                    <Box
-                      id="#top"
-                      component="img"
-                      alt="CoolBikes"
-                      // eslint-disable-next-line
-                      src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
-                      sx={{
-                        height: {
-                          md: '60px',
-                          xs: '45px'
-                        }
-                      }}
-                    />
-                  </Link>
-                </IconButton>
-                </Tooltip>
 
-              {arrayNavLinks.map((link) => (
-                <Box>
-                  <NavLink 
-                    className={mode === 'light' ? 'lightFont' : 'darkFont'} //font color set from DarkMode
-                    style={({ isActive }) => ({
-                      // color: isActive ? '#fff' : '#000',
-                      background: isActive ? '#ffffff1a' : '', //primary.main color slightly lighter
-                      // borderBottom: isActive ? 'solid 1px #000000de' : '',
-                      // transition: '.5s',
-                      padding: '.35rem',
-                      borderRadius: '3px',
-                      textDecoration: 'none',  
-                      fontWeight: '600',
-                      fontSize: {
-                        md: '1.2rem',
-                        xs: '1rem'
-                      },
-                      caretColor: 'transparent',
-                    })} 
-                    to={link.route}
-                  >
-                    {link.name}
-                  </NavLink>
-                </Box>
-              ))}
+          {/* ==== NAVIGATION ON MOBILE === */}
+          <Box sx={{display: 'flex'}}>
+            <Tooltip title="CoolBikes">
+              <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -15px 0 5px'}, display:{md: 'none', xs: 'block'}}}>
+                <Link to='/'>
+                  <Box
+                    id="#top"
+                    component="img"
+                    alt="CoolBikes"
+                    // eslint-disable-next-line
+                    src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
+                    sx={{
+                      height: {
+                        md: '60px',
+                        xs: '45px'
+                      }
+                    }}
+                  />
+                </Link>
+              </IconButton>
+            </Tooltip>
+            <Button 
+              sx={{color: 'text.primary', display:{md: 'none', xs: 'block'}}}
+              onClick={handleClickNav}
+            >
+              {openNav ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />}
+            </Button>
+            <Popover
+              anchorEl={anchorEl}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
+              open={openNav}
+              onClose={handleCloseNav}
+            >
+              <Box 
+                sx={{ p: '1.5rem', backgroundColor : 'primary.main'}}
+                className={mode === 'light' ? 'lightBorder' : 'darkBorder'}
+              >
+                  {navLinks.map((link) => (
+                      <ListItem key={link} sx={{p: '1rem 0'}}>
+                        <Fade cascade delay={50} damping={0.15}>
+                          <Box>
+                              <Link
+                                  style={{textDecoration: 'none'}}
+                                  to={link.path}
+                              >
+                                <Typography 
+                                  className="hover-underline-animation" //optional on mobile
+                                  sx={{
+                                    color: 'text.primary',
+                                    fontSize: '1.1rem',
+                                    fontWeight: '600'
+                                  }}
+                                  onClick={handleCloseNav}
+                                >
+                                    {link.name}
+                                </Typography>
+                              </Link>
+                          </Box>
+                        </Fade>
+                      </ListItem>
+                  ))}
+              </Box>
+            </Popover>
+          </Box>
 
-            </Box>
+          {/* END NAVIGATION MOBILE */}
 
-            
-          </Toolbar>
 
           <Box 
             sx={{
-              padding: {
-                md: '0 24px', 
-                xs: '0'
-              }
-          }}>
+              display: { md: 'flex', xs: 'none'}, 
+              gap: { 
+                md:'1.5rem', 
+                xs: '.25rem'
+              }, 
+              justifyContent: 'space-between', 
+              alignItems: 'center'
+            }}
+          >
+            <Tooltip title="CoolBikes">
+              <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -10px 0 -5px'}}}>
+                <Link to='/'>
+                  <Box
+                    id="#top"
+                    component="img"
+                    alt="CoolBikes"
+                    // eslint-disable-next-line
+                    src={process.env.PUBLIC_URL + '/images/' + `${mode === 'light' ? 'icon-home-black.png' : 'icon-home-white.png'}`}
+                    sx={{
+                      height: {
+                        md: '60px',
+                        xs: '45px'
+                      }
+                    }}
+                  />
+                </Link>
+              </IconButton>
+            </Tooltip>
+
+            {navLinks.map((link) => (
+              <Box>
+                <NavLink 
+                  className={mode === 'light' ? 'lightFont' : 'darkFont'} //font color set from DarkMode
+                  style={({ isActive }) => ({
+                    // color: isActive ? '#fff' : '#000',
+                    background: isActive ? '#ffffff1a' : '', //primary.main color slightly lighter
+                    // borderBottom: isActive ? 'solid 1px #000000de' : '',
+                    // transition: '.5s',
+                    padding: '.35rem',
+                    borderRadius: '3px',
+                    textDecoration: 'none',  
+                    fontWeight: '600',
+                    fontSize: {
+                      md: '1.2rem',
+                      xs: '1rem'
+                    },
+                    caretColor: 'transparent',
+                  })} 
+                  to={link.path}
+                >
+                  {link.name}
+                </NavLink>
+              </Box>
+            ))}
+
+          </Box>
+
+          </Toolbar>
+
+          <Box>
             <DarkMode />
           </Box>
           

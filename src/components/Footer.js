@@ -115,7 +115,7 @@ const footerLinkStyles = {
 
 const footerSectionStyles = {
     // width: '100%',
-    padding: '1rem 3rem 1rem 1rem',
+    padding: '1rem',
     color: 'text.primary'
     
 }
@@ -163,7 +163,7 @@ const Footer = ({mode}) => {
             
 
                 {/* SECTION */}
-                <Box sx={{display: 'flex', justifyContent: 'space-between', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
+                <Box sx={{display: 'flex', justifyContent: 'center', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
 
                     <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
                         <Tooltip title="CoolBikes">

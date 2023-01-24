@@ -83,7 +83,15 @@
 .lightFont {
   color: #000000de;
 }
+/* mobile NavLinks border on DarkMode */
 
+.darkBorder {
+  border: #fff solid 2px;
+}
+
+.lightBorder {
+  border: #000000de solid 2px;
+}
 
 
 /* ================= */
