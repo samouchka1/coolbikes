@@ -130,10 +130,7 @@ const backToTopButtonStyle = {
     alignSelf: 'flex-end', 
     caretColor: 'transparent', 
     margin: '0 0 0 2rem', 
-    display: {md: 'block', xs: 'none'}
-    // '&:hover' {
-        
-    // }
+    display: {md: 'block', xs: 'none'},
 }
 
 const Footer = ({mode}) => {
@@ -226,7 +223,7 @@ const Footer = ({mode}) => {
                             to="#top"
                         >
                             <Tooltip title="Back to top">
-                                <ArrowUpwardIcon fontSize="large" sx={{color: 'text.primary'}} />
+                                <ArrowUpwardIcon fontSize="large" sx={{ color: 'text.primary'}} />
                             </Tooltip>
                         </HashLink>
                     </Box>
