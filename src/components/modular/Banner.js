@@ -28,7 +28,6 @@ const descriptionStyles = {
     fontSize: '1.15rem',
     textAlign: 'left',
     lineHeight: '1.6'
-
 }
 
 const Banner = ({section}) => {

@@ -165,7 +165,7 @@ const Footer = ({mode}) => {
                 {/* SECTION */}
                 <Box sx={{display: 'flex', justifyContent: 'center', width: {md: '50%', xs:'100%'}, margin: '0 auto'}}>
 
-                    <Box sx={{alignSelf: 'center', margin: 'auto', display: {md: 'block', xs: 'none'}}}>
+                    <Box sx={{alignSelf: 'center', margin: '2rem 4rem', display: {md: 'block', xs: 'none'}}} /*desktop view*/>
                         <Tooltip title="CoolBikes">
                             <Link href="/" sx={{textDecoration: 'none'}}>
                                 <Box 
