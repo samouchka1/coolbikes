@@ -18,7 +18,7 @@ import React, {
     Navigation
 } from "swiper";
 
-import Banner from './modules/Banner';
+import Banner from './modular/Banner';
 import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles } from '../Styles';
   
   import "../App.css"
@@ -69,7 +69,7 @@ import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles
 
     const [ section, setSection ] = React.useState({
       title: 'Gravel bikes',
-      description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
+      description: 'Gravel bikes are designed to be ridden on a variety of surfaces including pavement, gravel roads and even light off-road trails. They have a relaxed geometry with a longer wheelbase and relaxed head angle which provides a stable and comfortable ride. They also have clearance for wider tires that give better traction and comfort on rough surfaces. They often have a wide range of gears and disc brakes that provide better stopping power and control in wet or muddy conditions. The key benefits of gravel biking include the ability to explore new roads and trails, getting a workout and enjoying the great outdoors. They are perfect for tackling any terrain, and a great option for anyone looking for a versatile and capable bicycle that can take you on adventures beyond the pavement.',
       bgImg: 'cyclinggravel.jpg'
     });
   

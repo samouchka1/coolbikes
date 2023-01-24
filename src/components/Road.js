@@ -24,7 +24,7 @@ import React, {
   import "swiper/css/navigation";
 
 
-import Banner from './modules/Banner';
+import Banner from './modular/Banner';
 import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles } from '../Styles';
   
   
@@ -70,7 +70,7 @@ import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles
 
     const [ section, setSection ] = React.useState({
       title: 'Road bikes',
-      description: 'This is descriptive text. Meant to create filer words used as a template to any potential text. It is worth mentioning this text should be longer.',
+      description: 'Road bikes are designed for riding on paved roads, they are lightweight, fast, and efficient. They have narrow tires, drop handlebars, and multiple gears which allows for speed and agility on the road. They have an aggressive riding position that allows for better power transfer from the rider to the bike which makes them ideal for racing and long-distance riding. They also have lightweight frames and components, and multiple gears which allow riders to tackle steep inclines and descents. The benefits of road biking include the ability to cover long distances quickly and efficiently, perfect for commuting, racing, and touring. They are also a great way to get in a workout and improve fitness while enjoying the great outdoors. If you\'re looking for a bike that will help you cover ground quickly and efficiently, a road bike may be just what you need.',
       bgImg: 'cyclingroad.jpg'
     });
   
