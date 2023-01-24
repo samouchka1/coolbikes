@@ -42,7 +42,7 @@ export const fixedGearBikes = [
   },
   {
     name: 'fixed4.jpg',
-    info: 'Designed to keep you moving fast, efficiently.',
+    info: 'Designed to keep you moving fast, swift and efficient.',
     route: '/fixedgear#fixed4',
     hash: '#fixed4',
     type: 'fixed'

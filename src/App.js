@@ -78,7 +78,7 @@ const App = () => {
   );
 
   //Body background color on DarkMode
-  mode === 'light' ? document.body.style.backgroundColor = '#fff' : document.body.style.backgroundColor = '#000';
+  mode === 'light' ? document.body.style.backgroundColor = '#f0f0f0' : document.body.style.backgroundColor = '#000';
 
   const DarkMode = () => {
     return (
