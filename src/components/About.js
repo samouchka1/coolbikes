@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import '../App.css'; //Animista effects
 
-import { gradientBgColors } from '../Styles';
+import { gradientBgColors } from '../appStyles';
 
 const buttonStyles= {
   color: 'text.primary',

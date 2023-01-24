@@ -1,18 +1,10 @@
 import React, {
-    useState
+    // useState
   } from 'react'
   import {
     Box,
     Container,
-    Card,
-    CardContent,
-    CardActions,
-    IconButton,
-    Typography,
   } from '@mui/material';
-  import AddCircleIcon from '@mui/icons-material/AddCircle';
-  import CloseIcon from '@mui/icons-material/Close';
-  import ShareIcon from '@mui/icons-material/Share';
   import { Swiper, SwiperSlide } from "swiper/react";
   import { 
     Navigation
@@ -25,7 +17,7 @@ import React, {
 
 
 import Banner from './modular/Banner';
-import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles } from '../Styles';
+import { gradientBgColors } from '../appStyles';
   
   
   export const roadBikes = [
@@ -74,11 +66,6 @@ import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles
       bgImg: 'cyclingroad.jpg'
     });
   
-    const [ hide, setHide ] = useState(false);
-    const toggleClick =() => {
-      setHide(!hide)
-    }
-  
     return (
 
       <>
@@ -109,48 +96,6 @@ import { gradientBgColors, iconStyles, pingStyles, cardStyles, cardContentStyles
                   }} 
                   src={process.env.PUBLIC_URL + '/images/' + bike.name} 
                 />
-
-
-                <Box 
-                  // === PING ===
-                  className="ping"
-                  sx={pingStyles}
-                />
-                <IconButton 
-                  // === ICON ===
-                  aria-label="view info"
-                  onClick={toggleClick}
-                  sx={iconStyles}
-                >
-                  { hide ? <CloseIcon fontSize="large" /> : <AddCircleIcon fontSize="large" />}
-                </IconButton>
-
-                <Card 
-                  className={ hide ? 'fade-in' : 'fade-out'}
-                  sx={cardStyles}
-                >
-                    <Typography sx={{ fontSize: { md: '1.6rem', xs: '1.2rem'}}}>
-                      {bike.info}
-                    </Typography>
-
-                    <CardActions disableSpacing sx={{padding: {md: 'auto', xs:'0'}}}> {/*actions*/}
-                      <IconButton aria-label="share" sx={{margin: '0 auto', padding: 0}}>
-                        <ShareIcon />
-                      </IconButton>
-                    </CardActions>
-
-                    <CardContent 
-                      sx={cardContentStyles}
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus maxime, asperiores mollitia
-                          distinctio esse aspernatur cum ullam itaque sed, ipsa dignissimos quae.
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates ad recusandae quibusdam,
-                          soluta architecto cupiditate rerum quos magnam quam dolor.
-                      </Typography>
-                    </CardContent>
-                  
-                </Card>
                 
               </SwiperSlide>
             ))}

@@ -34,33 +34,33 @@ const socialMedia = [
         url: 'https://www.reddit.com/'
     }
 ]
-const customerService = [
-    {
-        name: 'Contact\u00A0Us',
-        href: '#abc'
-    },
-    {
-        name: 'Help',
-        href: '#abc'
-    },
-    {
-        name: 'Shipping\u00A0Policy',
-        href: '#abc'
-    },
-    {
-        name: 'Return\u00A0Policy',
-        href: '#abc'
-    },
-    {
-        name: 'Discounts',
-        href: '#abc'
-    },
-    {
-        name: 'Feedback',
-        href: '#abc'
-    }
+// const customerService = [
+//     {
+//         name: 'Contact\u00A0Us',
+//         href: '#abc'
+//     },
+//     {
+//         name: 'Help',
+//         href: '#abc'
+//     },
+//     {
+//         name: 'Shipping\u00A0Policy',
+//         href: '#abc'
+//     },
+//     {
+//         name: 'Return\u00A0Policy',
+//         href: '#abc'
+//     },
+//     {
+//         name: 'Discounts',
+//         href: '#abc'
+//     },
+//     {
+//         name: 'Feedback',
+//         href: '#abc'
+//     }
     
-]
+// ]
 
 const ourPages =[
     {
@@ -131,6 +131,9 @@ const backToTopButtonStyle = {
     caretColor: 'transparent', 
     margin: '0 0 0 2rem', 
     display: {md: 'block', xs: 'none'}
+    // '&:hover' {
+        
+    // }
 }
 
 const Footer = ({mode}) => {
@@ -176,7 +179,7 @@ const Footer = ({mode}) => {
                             </Link>
                         </Tooltip>
                     </Box>
-                    <Box sx={footerSectionStyles}>
+                    {/* <Box sx={footerSectionStyles}>
                         <Typography variant="body2" sx={{fontWeight: '600'}}>
                             Customer Service
                         </Typography>
@@ -195,7 +198,7 @@ const Footer = ({mode}) => {
                                 ))}
                             </List>
                         </Typography>
-                    </Box>
+                    </Box> */}
                     <Box sx={footerSectionStyles}>
                         <Typography variant="body2" sx={{fontWeight: '600'}}>
                             Our&nbsp;Pages
