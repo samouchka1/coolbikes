@@ -44,10 +44,10 @@ const navBarStyles = {
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems:'center',
-  height: 75, //height
+  height: 85, //height
   backgroundColor : 'primary.main', //bgolor
   width: '100%',
-  marginBottom: '.75rem'
+  margin: '.75rem 0'
 }
 
 const Navbar = ({mode, DarkMode}) => {
@@ -169,20 +169,13 @@ const Navbar = ({mode, DarkMode}) => {
             {navLinks.map((link) => (
               <Box>
                 <NavLink 
-                  className={mode === 'light' ? 'lightFont' : 'darkFont'} //font color set from DarkMode
+                  className={`navlinks ${mode === 'light' ? 'lightFont' : 'darkFont'}`} //font color set from DarkMode
                   style={({ isActive }) => ({
-                    // color: isActive ? '#fff' : '#000',
                     background: isActive ? '#ffffff1a' : '', //primary.main color slightly lighter
-                    // borderBottom: isActive ? 'solid 1px #000000de' : '',
-                    // transition: '.5s',
                     padding: '.35rem',
                     borderRadius: '3px',
                     textDecoration: 'none',  
                     fontWeight: '600',
-                    fontSize: {
-                      md: '1.2rem',
-                      xs: '1rem'
-                    },
                     caretColor: 'transparent',
                   })} 
                   to={link.path}

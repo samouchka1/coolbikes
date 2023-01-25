@@ -4,13 +4,24 @@
 
 /* =============== */
 
+/* background gradients */
+
+.lightGradient {
+  color: radial-gradient(circle, rgba(220,223,244,1) 50%, rgba(236,236,236,1) 100%);
+}
+
+.darkGradient {
+  color: radial-gradient(circle, rgba(49,51,71,1) 50%, rgba(40,40,41,1) 100%);
+}
+
+
 /*color test*/
 .colorTest1 {
-  color: #f0f0f0;
+  color: #8686be;
 }
 
 .colorTest2 {
-  color: #2b3bd0c1;
+  color: #2f313f;
 }
 
 .colorTest3-Dark {
@@ -73,7 +84,16 @@
 }
 
 
-/* ============= */
+/* ============= NAVIGATION ===========  */
+/* NavLinks */
+.navlinks {
+  font-size: 1.2rem;
+}
+/* @media (max-width: 600px) {
+  .navlinks {
+    font-size: 1rem
+  }
+} */
 
 /* NavLinks color on DarkMode */
 .darkFont {
