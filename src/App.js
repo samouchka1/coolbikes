@@ -63,7 +63,7 @@ const App = () => {
           ? {
               // palette values for light mode
               primary: {
-                main: '#8686be',
+                main: '#8989a9',
               }
             }
           : {
