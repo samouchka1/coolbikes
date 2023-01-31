@@ -9,7 +9,8 @@ import {
     IconButton,
     Tooltip,
     Button,
-    Popover,
+    // Popover,
+    Modal,
     ListItem,
     Typography
 } from '@mui/material';
@@ -52,14 +53,21 @@ const navBarStyles = {
 
 const Navbar = ({mode, DarkMode}) => {
 
-  const [anchorEl, setAnchorEl] = useState(null);
-  const openNav = Boolean(anchorEl);
-  const handleClickNav = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleCloseNav = () => {
-    setAnchorEl(null);
-  };
+  //=== MODAL MOBILE NAV ===
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
+  //=== POPPER MOBILE NAV ===
+  // const [anchorEl, setAnchorEl] = useState(null);
+  // const openNav = Boolean(anchorEl);
+  // const handleClickNav = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleCloseNav = () => {
+  //   setAnchorEl(null);
+  // };
 
   return (
     <Container maxWidth={false}>
@@ -72,11 +80,14 @@ const Navbar = ({mode, DarkMode}) => {
 
               <Button 
                 sx={{color: 'text.primary', display:{md: 'none', xs: 'block'}}}
-                onClick={handleClickNav}
+                // onClick={handleClickNav}
+                onClick={handleOpen}
               >
-                {openNav ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />}
+                {/* {openNav ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />} */}
+                {open ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />}
               </Button>
-              <Popover
+              {/* POPPER */}
+              {/* <Popover
                 anchorEl={anchorEl}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
                 open={openNav}
@@ -111,7 +122,41 @@ const Navbar = ({mode, DarkMode}) => {
                         </ListItem>
                     ))}
                 </Box>
-              </Popover>
+              </Popover> */}
+
+              {/* MODAL */}
+              <Modal
+                open={open}
+                onClose={handleClose}
+              >
+                <Box sx={{ p: '2rem', m: '6rem 0', backgroundColor : 'primary.main'}}>
+                  {navLinks.map((link) => (
+                    <ListItem key={link} sx={{p: '1rem 0'}}>
+                      <Fade cascade delay={50} damping={0.15}>
+                        <Box>
+                            <Link
+                                style={{textDecoration: 'none'}}
+                                to={link.path}
+                            >
+                              <Typography 
+                                className="hover-underline-animation" //optional on mobile
+                                sx={{
+                                  color: 'text.primary',
+                                  fontSize: '1.1rem',
+                                  fontWeight: '600'
+                                }}
+                                // onClick={handleCloseNav}
+                                onClick={handleClose}
+                              >
+                                  {link.name}
+                              </Typography>
+                            </Link>
+                        </Box>
+                      </Fade>
+                    </ListItem>
+                  ))}
+                </Box>
+              </Modal>
 
               <Tooltip title="CoolBikes">
                 <IconButton sx={{margin: {md:  '0 -10px', xs: '0 -15px 0 5px'}, display:{md: 'none', xs: 'block'}}}>
