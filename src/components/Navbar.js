@@ -9,7 +9,6 @@ import {
     IconButton,
     Tooltip,
     Button,
-    // Popover,
     Modal,
     ListItem,
     Typography
@@ -58,17 +57,6 @@ const Navbar = ({mode, DarkMode}) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-
-  //=== POPPER MOBILE NAV ===
-  // const [anchorEl, setAnchorEl] = useState(null);
-  // const openNav = Boolean(anchorEl);
-  // const handleClickNav = (event) => {
-  //   setAnchorEl(event.currentTarget);
-  // };
-  // const handleCloseNav = () => {
-  //   setAnchorEl(null);
-  // };
-
   return (
     <Container maxWidth={false}>
       {/* <Bounce direction="down"> */}
@@ -80,49 +68,10 @@ const Navbar = ({mode, DarkMode}) => {
 
               <Button 
                 sx={{color: 'text.primary', display:{md: 'none', xs: 'block'}}}
-                // onClick={handleClickNav}
                 onClick={handleOpen}
               >
-                {/* {openNav ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />} */}
                 {open ? <ClearIcon sx={{color: 'text.primary'}} /> : <MenuIcon sx={{color: 'text.primary'}} />}
               </Button>
-              {/* POPPER */}
-              {/* <Popover
-                anchorEl={anchorEl}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'left'}}
-                open={openNav}
-                onClose={handleCloseNav}
-              >
-                <Box 
-                  sx={{ p: '1.5rem', backgroundColor : 'primary.main'}}
-                  className={mode === 'light' ? 'lightBorder' : 'darkBorder'}
-                >
-                    {navLinks.map((link) => (
-                        <ListItem key={link} sx={{p: '1rem 0'}}>
-                          <Fade cascade delay={50} damping={0.15}>
-                            <Box>
-                                <Link
-                                    style={{textDecoration: 'none'}}
-                                    to={link.path}
-                                >
-                                  <Typography 
-                                    className="hover-underline-animation" //optional on mobile
-                                    sx={{
-                                      color: 'text.primary',
-                                      fontSize: '1.1rem',
-                                      fontWeight: '600'
-                                    }}
-                                    onClick={handleCloseNav}
-                                  >
-                                      {link.name}
-                                  </Typography>
-                                </Link>
-                            </Box>
-                          </Fade>
-                        </ListItem>
-                    ))}
-                </Box>
-              </Popover> */}
 
               {/* MODAL */}
               <Modal
