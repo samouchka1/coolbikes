@@ -9,28 +9,28 @@ import { Fade } from "react-awesome-reveal";
 
 import "../../App.css"
 
-const menuStyles = {
-    margin: '5rem auto',
-    padding: {
-        md :'2rem',
-        xs: '1rem'
-    }, 
-    width: {
-        md: '60%',
-        xs: '80%'
-    },
-    '&:hover': {
-        boxShadow: '0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'
-    }
-}
-
-const descriptionStyles = {
-    fontSize: '1.15rem',
-    textAlign: 'left',
-    lineHeight: '1.6'
-}
-
 const Banner = ({section}) => {
+
+    const menuStyles = {
+        margin: '5rem auto',
+        padding: {
+            md :'2rem',
+            xs: '1rem'
+        }, 
+        width: {
+            md: '60%',
+            xs: '80%'
+        },
+        '&:hover': {
+            boxShadow: '0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12)'
+        }
+    }
+    
+    const descriptionStyles = {
+        fontSize: '1.15rem',
+        textAlign: 'left',
+        lineHeight: '1.6',
+    }
 
   return (
     <Container maxWidth={false} sx={{margin: '.50rem 0'}}>

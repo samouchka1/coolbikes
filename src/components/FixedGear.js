@@ -60,7 +60,7 @@ const FixedGear = ({mode}) => {
 
   const [ section, setSection ] = useState({
     title: 'Fixed gear bikes',
-    description: 'Fixed gear bikes, also known as "fixies," have a single gear and no freewheel mechanism, which means that the pedals are always in motion when the bike is moving. They have a minimalistic design with a few components and a sleek and clean look. They are versatile and can be ridden on a variety of surfaces and in different conditions, from city commutes to track racing. The key benefits of riding a fixed gear bike include the feeling of connectedness to the bike and the road, improvement of pedaling efficiency and leg strength. They are a unique and simple riding experience, and provide a direct connection to the bike and the road. They are a fantastic option for anyone looking for a new and exciting way to ride.',
+    description: 'Fixed gear bikes, also known as fixies, are simple and minimalistic bicycles with a single gear and no freewheel mechanism. This means the pedals always rotate with the wheels, providing a direct and unique riding experience. Fixed gear bikes are light and agile, making them popular for urban commuting and track cycling. They also require a certain level of skill to ride, as the lack of a freewheel requires the rider to constantly pedal. Despite their simplicity, fixies offer a fun and challenging ride for experienced cyclists looking for a different type of challenge.',
     bgImg: 'cyclingfixed.jpg'
   })
 
