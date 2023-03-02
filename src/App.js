@@ -84,7 +84,7 @@ const App = () => {
     return (
       <Tooltip title="set Dark / Light mode">
         <IconButton 
-          sx={{margin: '0 10px', p:{ md: '0 24px', xs: '0'}}}
+          sx={{m: { md:'0 30px', xs: '0 20px'}, p:{ md: '10px', xs: '0'}}}
           onClick={colorMode.toggleColorMode} 
           color="text.primary"
         >
