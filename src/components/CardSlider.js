@@ -82,11 +82,11 @@ const CardSlider = () => {
                     },
                     700 : {
                         slidesPerView: 3,
-                        spaceBetween: 10,
+                        spaceBetween: 0,
                     },
                     1100: {
                       slidesPerView: 4,
-                      spaceBetween: 10,
+                      spaceBetween: 0,
                     },
                 }}
             >
