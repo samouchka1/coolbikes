@@ -29,7 +29,7 @@
 }
 
 .colorTest4 {
-  color: #000000;
+  color: #b7b7b7;
 }
 
 
@@ -75,6 +75,16 @@
 /*Navigation Arrow Button color*/
 .swiper-button-prev, .swiper-button-next {
   color: #7b7b7b !important;
+}
+
+.swiper-button-prev {
+  left: -1px !important;
+  --swiper-navigation-size: 38px;
+}
+
+.swiper-button-next {
+  right: -1px !important;
+  --swiper-navigation-size: 38px;
 }
 
 @media (max-width: 600px) {
